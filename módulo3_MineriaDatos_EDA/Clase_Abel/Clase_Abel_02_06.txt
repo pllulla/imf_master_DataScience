@@ -1,0 +1,56 @@
+02/06
+
+Big Data en la empresa/Gobierno del dato
+
+---El dato es el reflejo de un hecho---
+
+Las empresas lo que quieren es beneficios
+Las Empresas DataDriven fijan su objetivo de beneficio y toma de decisiones basado en los datos
+
+Gobierno del dato:
+	Personas, procesos y tecnologías para crear un manejo adecuado del dato
+	Disponibilidad, integridad, usabilidad y seguridad del dato
+	Controlar los datos
+	Datos consistentes y fiables
+	Dar permisos según área de la empresa a los datos
+	Compilance o legal
+
+------PROYECTO DE IMPLEMENTACIÓN DEL GOBIERNO DEL DATO-----
+Pilares del gobiernos del dato:
+	Nivel de madurez respecto los datos
+	Visión de negocio a raíz de los datos
+	Visión compartida de los datos y expectativas
+	Motivación para tener un buen gobierno del dato
+	
+Implementación:
+	Designar roles y responsabilidades
+	Dominios
+	Política de datos
+	Glosario de términos
+	Identificar normativas
+	
+Control y gobierno:
+	Modelo de gobierno
+	Estructura de comités
+	Porfolio de iniciativas de datos
+	KPI de seguimiento (KPI indicadores de seguimiento y su evolución, de un servicio, una actividad o una iniciativa)
+	Normativas
+	Gestión de incidencias
+	
+Data Linage (linaje del dato): Describe el origen, movimientos, características y calidad de los datos. De donde empieza el dato y se transforma, hasta su objetivo. Control del ciclo de vida del dato.
+
+Outlayers, datos que salen del rango intercuartilico, que están fuera de el o dentro de un rango "normal". Es importante tenerlos en cuenta, si se tienen que descartar o no.
+En estadística descriptiva, se le llama rango intercuartílico o rango intercuartil, a la diferencia entre el tercer y el primer cuartil de una distribución. Es una medida de la dispersión estadística
+
+Si se ejecuta un modelo y el resultado es un 0,5, eso es lo peor ya que no hay una respuesta clara, es como tirar una moneda al aire y no tiene validez. Hay que buscar si se puede mejorar sea menor o mayor el porcentaje.
+
+Dentro de los modelos o cuando se quiere hacer uno, se tiene que hacer un buen análisis EXPLORATORIO al principio para identificar QUÉ variables (columnas) dan información ÚTIL y descartar los que solo aportan RUIDO. Eso diferencia la eficiencia de un Data Scientist.
+	
+Machine learnning: mantenimiento de máquinas y protocolos automáticos para máquinas
+				   El Machine Learning es una disciplina del campo de la Inteligencia Artificial que, a través de algoritmos, dota a los ordenadores de la capacidad de identificar patrones en datos masivos y elaborar predicciones (análisis predictivo).
+
+				   El aprendizaje automático o aprendizaje automatizado o aprendizaje de máquinas o aprendizaje computacional (del inglés, machine learning) es el subcampo de las ciencias de la computación y una rama de la inteligencia artificial, cuyo objetivo es desarrollar técnicas que permitan que las computadoras aprendan. Se dice que un agente aprende cuando su desempeño mejora con la experiencia y mediante el uso de datos; es decir, cuando la habilidad no estaba presente en su genotipo o rasgos de nacimiento.1​ "En el aprendizaje de máquinas un computador observa datos, construye un modelo basado en esos datos y utiliza ese modelo a la vez como una hipótesis acerca del mundo y una pieza de software que puede resolver problemas"
+
+
+
+

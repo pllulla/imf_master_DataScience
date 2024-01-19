@@ -1,0 +1,14 @@
+EJERCICIO: 
+Un banco solicita una consultoría para montar una plataforma robusta de datos con sistemas propios y externos ya que actualmente no disponen de una infraestructura y un gobierno de sus datos completo y robusto:
+
+Sistemas Internos - Web y app móvil con los datos de transacciones en un data mart (trusted) con BBDD NoSQL, para ejecutar y guardar los datos de transacciones de los clientes. A su vez estas aplicaciones pueden disponer de una API propia de la que extraer datos a un SQL Server para su posterior análisis.
+
+Sistemas Externos - Call center para atención al cliente al data mart correspondiente, posiblemente "Atención al cliente" para guardar, analizar y elaborar informes o gráficas de las principales aportaciones, encuestas, dudas o quejas de los clientes y poder tomar decisiones al respecto. Visualización e informes con PoweBI.
+
+Data lake en el que se introducen datos del API del banco de España para guardar los datos en RAW en google cloud storage y estandar (coste medio), con los datos globales de clientes y cuentas en España, así poder identificar posibles clientes, estar al tanto de regulaciones bancarias o datos/información relevante para el banco. Estos datos estarán disponibles 30 días para su transformación y análisis. También se puede alimentar de la API asociada a las aplicaciones internas (Web y APP móvil).
+
+Data Warehouse: Construir un data warehouse para almacenar los datos procesados y estructurados de manera optimizada para su consulta y análisis, en SQL Server con tablas y los datos de los clientes del banco (DNI, Nombre, cuanta, etc...) o normativas. BBDD NoSQL para datos no estructurados.
+
+Data Mart: Implementar data marts específicos para diferentes áreas o departamentos del banco, como: empleados, ventas, marketing, riesgo crediticio, entre otros. Estos data marts contienen datos predefinidos y estructurados según las necesidades de cada área por lo cual dependerá de la naturaleza de los datos y su caso de uso (transaccional o analítico) de cada data mart, el disponer de BBDD relacionales o no relacionales.
+
+Seguridad y gobierno de datos: Implementar medidas de seguridad y gobierno de datos para garantizar la confidencialidad, integridad y disponibilidad de la información. Esto incluye controles de acceso, cifrado, auditorías y políticas de gestión de datos.

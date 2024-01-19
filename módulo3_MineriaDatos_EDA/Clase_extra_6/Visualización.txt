@@ -1,0 +1,57 @@
+12/06
+
+VISUALIZACIÓN
+
+
+Visualización como herramienta de análisis tiene dos razones importantes:
+ - Presentar gran cantidad de información
+ - Facilidad de hacer comparaciones
+ 
+Hay que adaptar la información y la visualización de los datos a la gente que se va a presentar, con ejemplos y desgranando la información.
+
+INMEDIATEZ: el proceso de análisis exploratorio de los datos es una secuencia de preguntas a los datos y lo que se intenta es resolver las preguntas de forma eficiente y completa. Eso requiere la creación de gráficos de forma eficaz y rápida
+
+SENCILLEZ: Mejor sencillo y visual para que sea fácil ver los datos y lo que significan
+
+ESTANDARIZACIÓN: Estandarización del uso de gráficas, usar gráficas para cada tipo de datos o dependiendo del dato y al que la gente suele estar acostumbrado. Mejor sencillo y estándar que muy elaborado y complicado.
+Mapas de calor, gráficas de Quesito, barras...
+
+LA AUDIENCIA: Dependiendo de la audiencia o las personas a las que se les presente la información se debe adecuar a ese tipo de público. Es mejor enterarse y saber e tipo de personas a las que se va a presentar el informe y gráficas. Tener en cuenta si hace falta información extra, adaptada, explicar términos, etc...
+
+
+Suele haber dos escenarios de presentación de resultados:
+ - Presentación de conclusiones
+ - Creación de una herramienta de visualización de datos y seguimiento
+
+Tipos de diagrama para relación entre dos o más variables:
+ - Diagramas de dispersión, diagrama de burbujas
+ 
+Para una distribución entre dos tipo de datos y encontrar una posible correlación
+Para representar comparaciones en el tiempo
+Comparación entre varios items
+
+Intentar evitar TABLAS como presentación
+
+
+A- a un familiar
+	Ingresos: 2000€ nómina/mes
+	Gastos habituales
+		- Alquiler: 700€/mes
+		- Comida: 200€/mes
+		- Transporte: 50€/mes
+		- Móvil/Internet: 20€/mes
+		- Suscripciones (Netflix, Spotify): 20€/mes
+		
+	Gastos extraordinarios
+		- Videojuegos
+		- Vacaciones (viajes, estancias)
+		- Espectáculos y conciertos
+
+B- a un banco
+	Ingresos: 2000€ nómina/mes
+	Ahorros: 6000€
+	Situación laboral: En la empresa desde hace 4 años y contrato fijo
+	
+	Sin cargos pendientes ni con prestamos en la actualidad
+
+

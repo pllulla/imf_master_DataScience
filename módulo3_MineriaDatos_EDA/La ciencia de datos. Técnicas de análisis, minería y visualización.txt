@@ -1,0 +1,115 @@
+La ciencia de datos. Técnicas de análisis, minería y visualización
+
+24/05
+
+GITHUB subir código y documentarlo
+Extracción, análisis y visualización de datos
+ETL Extracción, Transformación y carga
+
+
+------DATOS-----
+Datos estructurados : CSV, SQL
+No estructurados: Imágenes, JSON, multimedia, texto plano, puntos, XML
+
+Columnas y filas = atributos y registros
+Los datos estructurados vacíos, pueden ser nulo y vacío
+Los datos no estructurados, pueden vació, nulo y la clave sola
+
+Datos estructurados tiene un único nivel de datos y el no estructurado puede tener diferentes niveles y subniveles
+Datos no estructurados tiene campo, clave y valor
+
+-PULL, PUSH y STEAMING-
+pull los extraigo de un sitio 
+push me envían los datos de un sitio
+Streaming me mandan datos constantemente 
+
+
+----------FASES DE LOS DATOS----------
+Primera fase:
+	RAW o en crudo: Son datos tal cual se extraen o se generan (me llega, los guardo y los almaceno, no les hago nada, no los filtro ni transformo)
+	Standarize: Datos en RAW almacenados en una BBDD y guardarlos a largo plazo para usarlos en un formato adecuado. Ya tienen algo de filtro y pasan algún tipo de transformación
+	Trusted: Datos combinados o no para un uso específico. Datos para casos de uso, datos usables o adaptados
+DATA WAREHOUSE Standarize
+DATA LAKE raw
+DATAMART Trusted
+
+Fuente > Lago > Planta de envasado de agua > camiones con botellas a los supermercados > clientes
+Fuente, el lago los datos está turbia (RAW), la plant de envasado filtra el agua (Standarize), los supers la clasifican y los clientes la consumen en estado optimo (Datamart)
+En todas las fases el agua se puede beber pero tiene diferente calidad, es extrapolable a los datos
+
+Los datos se almacenan en un disco duro o en cloud
+
+Los datos RAW se almacenan temporalmente, normalmente se guardan días o semanas (30 días) y luego se borran. Se tiene que pasar a Standarize para guardarlos.
+	
+SQL necesita entrada de datos en orden, no puede insertar dos datos al mismo tiempo, va uno detrás de otro secuencial
+NoSQL puede insertar varios datos a la vez, no necesita meter uno detras de otro
+
+Los datos en DATA LAKE se pueden guardar:
+	Cold line: datos congelados, lectura y escritura lentos pero de bajo coste
+	Standar: datos escritura o lectura rápida pero no las dos a la vez, coste medio
+	Hot line: permiten lectura y escritura muy rápida, baja latencia y acceso rápido, alto coste
+
+	En el caso de DATA WAREHOUSE siempre está en HOT LINE
+	
+RAW (data lake)  DATOS A SACO > guardamos los datos en GOOGLE CLOUD STORAGE o en un disco duro 
+
+Standarize (data warehouse) ESTRUCTURADOS O NO ESTRUCTURADOS > Guardamos en BBDD > SQL y NoSQL
+SQL MySQL
+NoSQL MongoDB, NEO4J
+
+Trusted (datamart) dos casos de uso:
+	Analítico: entornos solo SQL, SOLO SQL! - En analítica nunca habrá escritura de datos, solo consulta y lectura. Estos datos pasan por un flujo analitico de raw > standarize > Trusted
+	Transaccional: entornos normalmente NoSQL - Son entornos Datamart donde se van a escribir, cambiar o hacer transacciones con los datos. Estos datos son intrínsecos de aplicaciones o movimientos en la empresa, no pasan por el flujo
+
+Todos los datos producidos dentro de una empresa deben ser standarize, si vienen de fuera o de otra empresa deben pasar por RAW para ser estandarizados al formato que tenga la empresa, ya que si entran datos no estandarizados puede colapsar la estructura de datos de la empresa.
+
+
+EJERCICIO: 
+Un banco solicita una consultoría para montar una plataforma robusta de datos con sistemas propios y externos ya que actualmente no disponen de una infraestructura y un gobierno de sus datos completo y robusto:
+
+Sistemas Internos - Web y app móvil con los datos de transacciones en un data mart (trusted) con BBDD NoSQL, para ejecutar y guardar los datos de transacciones de los clientes. A su vez estas aplicaciones pueden disponer de una API propia de la que extraer datos a un SQL Server para su posterior análisis.
+
+Sistemas Externos - Call center para atención al cliente al data mart correspondiente, posiblemente "Atención al cliente" para guardar, analizar y elaborar informes o gráficas de las principales aportaciones, encuestas, dudas o quejas de los clientes y poder tomar decisiones al respecto. Visualización e informes con PoweBI.
+
+Data lake en el que se introducen datos del API del banco de España para guardar los datos en RAW en google cloud storage y estandar (coste medio), con los datos globales de clientes y cuentas en España, así poder identificar posibles clientes, estar al tanto de regulaciones bancarias o datos/información relevante para el banco. Estos datos estarán disponibles 30 días para su transformación y análisis. También se puede alimentar de la API asociada a las aplicaciones internas (Web y APP móvil).
+
+Data Warehouse: Construir un data warehouse para almacenar los datos procesados y estructurados de manera optimizada para su consulta y análisis, en SQL Server con tablas y los datos de los clientes del banco (DNI, Nombre, cuanta, etc...) o normativas. BBDD NoSQL para datos no estructurados.
+
+Data Mart: Implementar data marts específicos para diferentes áreas o departamentos del banco, como: empleados, ventas, marketing, riesgo crediticio, entre otros. Estos data marts contienen datos predefinidos y estructurados según las necesidades de cada área por lo cual dependerá de la naturaleza de los datos y su caso de uso (transaccional o analítico) de cada data mart, el disponer de BBDD relacionales o no relacionales.
+
+Seguridad y gobierno de datos: Implementar medidas de seguridad y gobierno de datos para garantizar la confidencialidad, integridad y disponibilidad de la información. Esto incluye controles de acceso, cifrado, auditorías y políticas de gestión de datos.
+
+
+Ejemplo Vodafone
+Conectar BBDD CBC traer numeraciones activas, formato JSON data lake, GOOGLE cloud 30 días
+Datos consolidados Wrehouse SQL datos CBC y clientes
+Data mart comercial analitico que se dedica a vender lineas de telefono,  transaccional con taifas y posibles nuevos clientes para vender lineas
+
+-----------------------
+
+25/05
+
+Segunda fase:
+
+
+
+
+--------------------------
+
+
+29/05
+
+
+
+
+
+
+API interfaz que usan los servidores y servicios para comunicarse y traspasar información, con métodos máquina
+API se comunica a y a una BBDD
+Se comunica y se transmite información por GET POST PUT
+GET se usa para obtener información, directo 
+POST se usa para mandar información 
+PUT se usa para crear contenido en la API 
+
+Algunas APIS necesitan identificación para trabajar con estas y primero pedirán una clave. Normalmente dan un acceso limitado por tiempo
+
