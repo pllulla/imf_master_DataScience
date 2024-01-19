@@ -1,0 +1,883 @@
+id_entorno;nombre_entorno
+1;PRUEBA                                                                                              
+2;PRODUCTION                                                                                          
+3;UAT                                                                                                 
+4;CERT                                                                                                
+5;cert-dev                                                                                            
+6;no production                                                                                       
+7;OIMPRE - OIMDEV                                                                                     
+8;Ericcson                                                                                            
+9;PRODUCTION1                                                                                         
+10;Solicito que se le den permisos al usuario WUECRO17, pueden utilizar el usuario modelo wuedol02     
+11;Fast                                                                                                
+12;PRE                                                                                                 
+13;PREPRODUCCION                                                                                       
+14;na                                                                                                  
+15;MIGRATION                                                                                           
+16;RBM TST                                                                                             
+17;Maqueta                                                                                             
+18;TELXIUS                                                                                             
+19;PREPRODUCTION                                                                                       
+20;DEV                                                                                                 
+21;gpllmmadpe01                                                                                        
+22;RTP                                                                                                 
+23;PRO                                                                                                 
+24;DSS                                                                                                 
+25;MIG                                                                                                 
+26;FAST PRE                                                                                            
+27;TRAFUL                                                                                              
+28;Gran via                                                                                            
+29;Usuario para PRE y PRO Produccion de FAST                                                           
+30;CERT/DEV/DSS                                                                                        
+31;FAST DEV                                                                                            
+32;PRODUCCIÓN                                                                                          
+33;PRE-PRODUCTION                                                                                      
+34;*** ESTE ENTORNO NO PRODUCTIVO NO TIENE SLAs ASOCIADOS ***                                          
+35;No Production                                                                                       
+36;Ericsson                                                                                            
+37;TST                                                                                                 
+38;Planning5-test                                                                                      
+39;TODO                                                                                                
+40;CI                                                                                                  
+41;sin produccion                                                                                      
+42;Remedy                                                                                              
+43;Production                                                                                          
+44;N/A                                                                                                 
+45;DEV, DSS and UAT                                                                                    
+46;No aplica                                                                                           
+47;PREPRODUCCIONT                                                                                      
+48;RoD                                                                                                 
+49;staging                                                                                             
+50;PRE/DEV                                                                                             
+51;PRE-PRODUCCIÓN                                                                                      
+52;PRODUCION                                                                                           
+53;RBM PRE                                                                                             
+54;PRODUCTION - SMC                                                                                    
+55;.                                                                                                   
+56;https://pre-traful-elastic.telefonicabusinesssolutions.com/                                         
+57;FW de OSS                                                                                           
+58;RBM TST - ESB UAT                                                                                   
+59;UAT                                                                                                 
+60;BBDD PREPRODUCCIÓN                                                                                  
+61;DWH                                                                                                 
+62;RoD Certificación                                                                                   
+63;Entorno UAT.                                                                                        
+64;PRE PRODUCTION                                                                                      
+65;CSPDWPRE                                                                                            
+66;asasasas                                                                                            
+67;Entorno de producción                                                                               
+68;CERTIFICATION                                                                                       
+69;p                                                                                                   
+70;PLT                                                                                                 
+71;PLT,UAT,CER                                                                                         
+72;PROVISIÓN                                                                                           
+73;CERT, DEV, MIG, PRE, DSS y ARAMIS                                                                   
+74;PRODUCTION and PRER                                                                                 
+75;O3P1                                                                                                
+76;NO                                                                                                  
+77;RBM MIG                                                                                             
+78;DSS,DEV                                                                                             
+79;--                                                                                                  
+80;Tras actualizar Windows 10 (ver.1809) en el equipo me ha dejado de funcionar la segunda pantalla....
+81;SUGUS DES - SF UAT                                                                                  
+82;Não se aplica                                                                                       
+83;LAB                                                                                                 
+84;No productivo                                                                                       
+85;MIG RBM                                                                                             
+86;Nuevo entorno Apollo, es una PoC pero es importante tramitarlo con urgencia.                        
+87;PRE-producción                                                                                      
+88;PRETEFGAD                                                                                           
+89;PRE,PLT,CERT                                                                                        
+90;High                                                                                                
+91;Capacity AlDI Prueba                                                                                
+92;MIG, CERT                                                                                           
+93;DESARROLLO                                                                                          
+94;FAST varios entornos no productivos                                                                 
+95;HCS - Cisco Satellite pruebas                                                                       
+96;CERT + UAT                                                                                          
+97;Capacity Managamente ALDI                                                                           
+98;Capacity Management ALDI                                                                            
+99;PRODUCTIO                                                                                           
+100;PRE y PRO                                                                                           
+101;pre.seda.telefonica.com                                                                             
+102;UAT y PRO                                                                                           
+103;PRE TRAFUL (pruebas para cliente)                                                                   
+104;CATACOE                                                                                             
+105;Remedy CERT-DEV                                                                                     
+106;Capacity ALDI                                                                                       
+107;OTRO                                                                                                
+108;VPN service                                                                                         
+109;Entorno de pruebas de Power Center enlazado con el entorno de pruebas de PBCS (planning3-test)      
+110;CAPACITY                                                                                            
+111;https://pre.fast.telefonica.com/                                                                    
+112;UAT, CERT, PRE                                                                                      
+113;PLT,CERT                                                                                            
+114;RBM TEST                                                                                            
+115;PRE/Staging                                                                                         
+116;TOMs DEV                                                                                            
+117;PLAT                                                                                                
+118;SECOPS                                                                                              
+119;BIEN                                                                                                
+120;mCatalog y UAT                                                                                      
+121;PRE,DSS,CER                                                                                         
+122;sandbox (uat)                                                                                       
+123;https://mig.fast.telefonica.com/common/uobject.jsp?tab=_Summary&object=9156796443413695539          
+124;NOT NECESARY                                                                                        
+125;UAT,MIG                                                                                             
+126;PREPRODUCTION                                                                                       
+127;PRE,PLT                                                                                             
+128;uat preproduccion                                                                                   
+129;DES.SUGUS                                                                                           
+130;EMR PRE                                                                                             
+131;PLT,PRE                                                                                             
+132;PoC Apollo                                                                                          
+133;Bluecoat                                                                                            
+134;PRO TEST Cliente                                                                                    
+135;work                                                                                                
+136;Nueva máquina BDD Pangea                                                                            
+137;pre.fast.telefonica.com                                                                             
+138;ok                                                                                                  
+139;mcatalog                                                                                            
+140;CERTIFICACION                                                                                       
+141;PRE- PRODUCTION                                                                                     
+142;FAST & SALESFORCE                                                                                   
+143;DEV,PRE                                                                                             
+144;cert-dev                                                                                            
+145;PRE EMR                                                                                             
+146;PRE/UAT/MIG/CERT                                                                                    
+147;ESBPRE                                                                                              
+148;PREproductción                                                                                      
+149; PREPRODUCCIÓN                                                                                      
+150;RBM CERT                                                                                            
+151;"https://telefonicab2b--mcatalog.cs17.my.salesforce.com/home/home.jsp?sdtd=1 ""M-Catalog"" de Bit2Win  "
+152;TechLab con OSS                                                                                     
+153;RBM UAT                                                                                             
+154;SMC TEAM                                                                                            
+155;GEM                                                                                                 
+156;SMC EMEA                                                                                            
+157;CERT2                                                                                               
+158;PRE o RTP                                                                                           
+159;CERT RBM                                                                                            
+160;CER_DEV                                                                                             
+161;Proxy Bluecoat                                                                                      
+162;dev.fast.telefonica.com                                                                             
+163;Entorno de PRE-Producción                                                                           
+164;Entorno UAT                                                                                         
+165;FAST PRE                                                                                            
+166;FAST TOMS ENTORNO Preproduccion                                                                     
+167;SUGUS de Desarrollo                                                                                 
+168;Laboratorios de curso en línea                                                                      
+169;.........                                                                                           
+170;outolook                                                                                            
+171;RBM PRODUCTION                                                                                      
+172;Salesforce RTP                                                                                      
+173;PostgreSQL PRE                                                                                      
+174;Main access                                                                                         
+175;" Environment https://telefonicab2b--mcatalog.cs17.my.salesforce.com/home/home.jsp?sdtd=1 ""M-Catal..."
+176;TESTING                                                                                             
+177;Preproducción y posteriormente Producción                                                           
+178;BO PRE: srvmwpredwh02.tefgad.com                                                                    
+179;Cert Dev                                                                                            
+180;DEV HELIX 20.02                                                                                     
+181;cert.fast.telefonica.com                                                                            
+182;CERT AND PLAT                                                                                       
+183;SRM                                                                                                 
+184;UAT (from PRO DATA)                                                                                 
+185;TRAFUL                                                                                              
+186;Puede hacerse la demo en el entrono UAT                                                             
+187;CERT, DEV, PLAT, PRE and MIG                                                                        
+188;PREPODUCTION                                                                                        
+189;PRE,UAT                                                                                             
+190;PRE FAST cert-dev Remedy                                                                            
+191;DEV, CERT, PLAT, MIG and PRE                                                                        
+192;PRE, CERT, TEST y MIG                                                                               
+193;BO de PRE                                                                                           
+194;"son los buzones genericos bm.businesssolutions@telefonica.com; mncs.qualification.committee@telef..."
+195;ETL                                                                                                 
+196;CERT                                                                                                
+197;TEST                                                                                                
+198;EP0                                                                                                 
+199;SEDA CERT 10.30.171.33                                                                              
+200;TUSA issued                                                                                         
+201;SP0                                                                                                 
+202;OSS                                                                                                 
+203;s                                                                                                   
+204;https://plat.fast.telefonica.com/                                                                   
+205;Prod                                                                                                
+206;TEFGAD                                                                                              
+207;TEFGGAD                                                                                             
+208;budgetary                                                                                           
+209;FAST Pre-production enviroment as being part of FAST COE                                            
+210;FAST Pre-production enviroment                                                                      
+211;NSIM PRE                                                                                            
+212;OMI, NSIM                                                                                           
+213;Roamlake                                                                                            
+214;https://telefonicab2b--uat.cs87.my.salesforce.com/                                                  
+215;plat.fast.telefonica.com                                                                            
+216;PREPRODUCCION/Staging                                                                               
+217;Testing, y PRE                                                                                      
+218;oportunidades y cotización a través de B2W                                                          
+219;marina.martinez@telefonica.com                                                                      
+220;TEI                                                                                                 
+221;DWH PREPRODUCCIÓN                                                                                   
+222;En ambos entornos, primero PRE/Staging y despues en PRO                                             
+223;DEV, PRE                                                                                            
+224;RTP o PRE                                                                                           
+225;Radius CdS Miami y Madrid                                                                           
+226;FAST PLAT                                                                                           
+227;En despliegue                                                                                       
+228;New BOUYG THRM MPLS VPN #037219107                                                                  
+229;LAB Voz y Multimedia                                                                                
+230;PLAT RBM                                                                                            
+231;https://telefonicab2b--uat.lightning.force.com/lightning/r/Opportunity/0068E00000PfBjjQAF/view      
+232;22                                                                                                  
+233;EMR TRAFUL PRE                                                                                      
+234;PreProducción (UAT)                                                                                 
+235;EMR                                                                                                 
+236;Clonado de PRO a UAT                                                                                
+237;nose a que te refieres                                                                              
+238;Apagadas                                                                                            
+239;DEV y PLAT                                                                                          
+240;devops                                                                                              
+241;El acceso esta la ferramienta esta Ok,  pero han desaparecido todos los tickets Brasil e USA        
+242;https://sso-des.identity.telefonica.com                                                             
+243;Development                                                                                         
+244;PRODUCTION y PRE/Staging, ambos entornos                                                            
+245;PC usuario                                                                                          
+246; RBM MIG                                                                                            
+247;CERT ODB, CERT RDB, PRE ODB, MIG ODB, MIG RDB, PLAT ODB, PLAT RDB                                   
+248;PRE y luego PRO                                                                                     
+249;EKS-PRE                                                                                             
+250;00000000000000000000                                                                                
+251;cert1                                                                                               
+252;IGNORAR                                                                                             
+253;PRE RoD cert-dev                                                                                    
+254;DEV, MIG, PLAT, CERT                                                                                
+255;uprebd03.tefgad.com:1532/CSPDWPRE                                                                   
+256;RBM ECA                                                                                             
+257;PRE FAST cert-dev RoD                                                                               
+258;Cert - Dev                                                                                          
+259;Sataging (PRE)                                                                                      
+260;CERT2 glltfmadpe12 (10.30.191.33)                                                                   
+261;PRE FAST                                                                                            
+262;CERT - DERV                                                                                         
+263;DEV,CERT                                                                                            
+264;PLAT and MIG                                                                                        
+265;PLAT y DEV                                                                                          
+266;CERT2 & PRE                                                                                         
+267;TRAFUL PRE                                                                                          
+268;RBM PLAT                                                                                            
+269;UAR                                                                                                 
+270;HPOO PRODUCCION                                                                                     
+271;NSO CERT1                                                                                           
+272;Bulletin                                                                                            
+273;VITA MAQ                                                                                            
+274;CERTDEV                                                                                             
+275;FAST PRE Remedy Cert-dev                                                                            
+276;Elementos de Trabajo de oficina. No en producción.                                                  
+277;Working                                                                                             
+278;DEV, CERT, MIG, PLAT                                                                                
+279;RBM IMG                                                                                             
+280;RBM PLT                                                                                             
+281;DEV, CERT                                                                                           
+282;Sugus, Duna, etc..                                                                                  
+283;Duna                                                                                                
+284;Desarrollo y QA                                                                                     
+285;Sales                                                                                               
+286;http://10.30.190.243:8000/ (maqueta)                                                                
+287;DES                                                                                                 
+288;https://esb-pre-infinity.wh.telefonica/allianz/IncidentConnector_AMOS2TEF                           
+289;https://infinity-cert-dev.onbmc.com/rsso/start?bypass-auth=true&tenant=*&goto=https://infinity-ce...
+290;CERT-DEV (https://esb-pre-infinity.wh.telefonica:8447/allianz/IntegrationAllianz/IncidentConnecto...
+291;FAST PRE RoD cert-dev                                                                               
+292;CERT1/CERT2                                                                                         
+293;FAST UAT -  RoD cert-dev                                                                            
+294;Maquetas Voz y Multimedia                                                                           
+295;tiws-fra-par-mp-b-1002559                                                                           
+296;SF:UAT - FAST: FASTPRE                                                                              
+297;PRE-UAT                                                                                             
+298;glltfmadpe19                                                                                        
+299;DEV y CERT                                                                                          
+300;Not sure about the info you need. I am connected to office WiFi and to Cisco VPN.                   
+301;srvmlpreetl01 (10.30.171.5)                                                                         
+302;workplace                                                                                           
+303;https://infinity-cert-dev.onbmc.co                                                                  
+304;Apple                                                                                               
+305;QA                                                                                                  
+306;sales force                                                                                         
+307;PREPRODUCION                                                                                        
+308;preproduccion FAST                                                                                  
+309;PREPRODUCCION, DEV, CERT FAST                                                                       
+310;Baja de los equipos en NSIM, TACACs, NSO y resto de SSGG de OSS                                     
+311;Dev, Cert,Plat and Mig                                                                              
+312;UAT cert-dev                                                                                        
+313;FSUATR                                                                                              
+314;Se solicita acceso a VPN a los usuarios de la plantilla adjunta                                     
+315;Laboratorio                                                                                         
+316;ALDI LAB                                                                                            
+317;SF UAT FAST Pre                                                                                     
+318;FAST per ROD cert-dev                                                                               
+319;No aplica.                                                                                          
+320;https://infinity-cert-dev.onbmc.com/arsys/forms/onbmc-s/SHR%3ALandingConsole/Default+Administrato...
+321;new env                                                                                             
+322;Splunk Maqueta                                                                                      
+323;PREPRO                                                                                              
+324;PROBLEMA PI                                                                                         
+325;Maquetas Cloud                                                                                      
+326;PRE-enviroment de FAST                                                                              
+327;SOLUCION PROBLEMA ASIGNACION                                                                        
+328;ALDI Laboratory                                                                                     
+329;-                                                                                                   
+330;PRE de FAST                                                                                         
+331;MAQUETA SPLUNK                                                                                      
+332;E-mail                                                                                              
+333;PRE                                                                                                 
+334;glltfalhta20                                                                                        
+335; (Nueva plantilla de redhat 8)                                                                      
+336;CER,DEV,UAT,MIG                                                                                     
+337;Resolve problem PO                                                                                  
+338;Maqueta de Splunk                                                                                   
+339;pruebas para proyecto Valkiryas                                                                     
+340;Meraki maqueta                                                                                      
+341;Resolve problem.                                                                                    
+342;glltfmadpe20                                                                                        
+343;CERT/DEV                                                                                            
+344;ALL NON-PRODUCTIVES                                                                                 
+345;PRE-PRO                                                                                             
+346;se resuelve                                                                                         
+347;Provision Vsat                                                                                      
+348;PROBLEM PO                                                                                          
+349;RBM TEST Envoriment                                                                                 
+350;UAT - Flujo de WH                                                                                   
+351;FAST DEV, CERT PRE, DSS, PLAT, MIG, PRO                                                             
+352;CERT/DEV - RoD                                                                                      
+353;Good Morning,  The FAST tool does not load.  thanks.                                                
+354;HI,  Fast NO WORK  Thanks                                                                           
+355;Problem with POs                                                                                    
+356;PROBLEM PI PROCESS                                                                                  
+357;PROBLEM WITH 7 POs                                                                                  
+358;PRE (UAT)                                                                                           
+359;PROBLEM POs                                                                                         
+360;UAT: FAST - RoD -SF                                                                                 
+361;glltfmadpe12                                                                                        
+362;CERT , MIG                                                                                          
+363;gllapalhta01                                                                                        
+364;NOC                                                                                                 
+365;RDB FSPRER                                                                                          
+366;UAT RBM & CERT RBM                                                                                  
+367;TECHLAB                                                                                             
+368;FSPRER                                                                                              
+369;Pre produccion                                                                                      
+370;glltfalhta02                                                                                        
+371;TOMS PRE                                                                                            
+372;BI EN - no production                                                                               
+373;TOMS PRE, RBM TST                                                                                   
+374;FAST TOMS PRE                                                                                       
+375;ZEPPELIN -EDGE PRE                                                                                  
+376;SUGUS DES                                                                                           
+377;RBM PRO                                                                                             
+378;CERT/DEV - QA                                                                                       
+379;PRO & PRE                                                                                           
+380;Remote                                                                                              
+381;No data                                                                                             
+382;RoD - QA                                                                                            
+383;https://vmanage-1686125.viptela.net/                                                                
+384;VPN                                                                                                 
+385;Operaciones                                                                                         
+386;Portal - UAT / RoD - QA                                                                             
+387;EMR y ELASTIC PRE                                                                                   
+388;PRODUCTION && NOPRODUCTION                                                                          
+389;dev-pre-pro                                                                                         
+390;TEO                                                                                                 
+391;por favor dadme acceso a UAT de W2C gracias                                                         
+392;Necesitamos que esta modificación se realice en UAT y luego si funciona en PRO                      
+393;RoD QA -  Salesforce UAT                                                                            
+394;xxxxxx                                                                                              
+395;Read-Only need                                                                                      
+396;-1                                                                                                  
+397;QA enviroment                                                                                       
+398;RBM UAT                                                                                             
+399;PRE RBM, TST RBM, MIG RBM & PLAT RBM                                                                
+400;Mailling                                                                                            
+401;Splunk Preproducción 10.30.190.243:8000                                                             
+402;solicito acceso a la web https://fast.telefonica.com                                                
+403;Request                                                                                             
+404;Entorno CERT DEV HELIX                                                                              
+405;GitLab                                                                                              
+406;UAT (https://telefonicab2b--uat.my.salesforce.com/)                                                 
+407;UAT PRE y MIG                                                                                       
+408;Pre Production ALDI                                                                                 
+409;CERT2  (10.30.191.33)                                                                               
+410;PRE.                                                                                                
+411;CER,UAT,PRE                                                                                         
+412;Orders in Fast                                                                                      
+413;FAST UAT                                                                                            
+414;Las órdenes tienen que entrar en SF UAT                                                             
+415;OpenShift                                                                                           
+416;DATA MODIFICATION IN FAST                                                                           
+417;Antiguo PRO                                                                                         
+418;PRODUCTIONUAT                                                                                       
+419;Salesforce UAT                                                                                      
+420; *** THIS NON-PRODUCTION ENVIRONMENT DOES NOT HAVE ASSOCIATED***                                    
+421;???????                                                                                             
+422;TEST  VDC                                                                                           
+423;......                                                                                              
+424; *** THIS NON-PRODUCTION ENVIRONMENT DOES NOT HAVE ASSOCIATED*                                      
+425;Open shift Voice & Multimedia                                                                       
+426;RoD Cert-Dev                                                                                        
+427;Cloud Storage                                                                                       
+428;Entorno de cert-dev                                                                                 
+429;glltfalhta03                                                                                        
+430;DESA                                                                                                
+431;MCATALOG UAT                                                                                        
+432;mapro-pre.wh.telefonica                                                                             
+433;Preproducción y Testing                                                                             
+434;Des Sugus                                                                                           
+435;FAST Ordering (TOMS) PRE.                                                                           
+436;Preproducción de VITA 10.30.191.30                                                                  
+437;...                                                                                                 
+438;UAT a CERT-DEV                                                                                      
+439;On Site Support USA Waterford                                                                       
+440;PRODUCTlON                                                                                          
+441;Laboratorio Peñuelas                                                                                
+442;Lab Enviroment of HCS                                                                               
+443;Maquina salto Maqueta                                                                               
+444;*** THIS NON-PRODUCTION ENVIRONMENT DOES NOT HAVE ASSOCIATED**                                      
+445;Entorno UAT de SUGUS que se conecta a SF UAT y al portal                                            
+446;CERT -DEV                                                                                           
+447;efasfsd                                                                                             
+448;http://10.30.171.117/#default/home                                                                  
+449;TecnoWIki                                                                                           
+450;office                                                                                              
+451;Bi EN                                                                                               
+452;Certificación 2                                                                                     
+453;Genesis                                                                                             
+454;Openshift voz y multimedia                                                                          
+455;xxxxx                                                                                               
+456;ES EN PRODUCCIÓN                                                                                    
+457;Non Production Environmen                                                                           
+458;PRODUCTION + ALL NO PRODUCTION                                                                      
+459;Access CRQ                                                                                          
+460;Kibana                                                                                              
+461;Usuario Remedy NH                                                                                   
+462;Meraki dashboard                                                                                    
+463;ROM                                                                                                 
+464;PRODUCTION SALESFORCE BI_EN                                                                         
+465;Entorno de no produccion                                                                            
+466;Please create access for the Carrier customer Tata Communications Limited                           
+467;This is for salesforce                                                                              
+468;Producción (No me aparece en el desplegable)                                                        
+469;Entorno en Producción Remedy                                                                        
+470;EN PRODUCCIÓN POR FAVOR                                                                             
+471;GPM-Validation Salesforce                                                                           
+472;Infoblox                                                                                            
+473;aas                                                                                                 
+474;PRE -  https://traful.splunkcloud.com/en-US/app/telefonica_orwell_app/inventario_buzones            
+475;DOCUMENTATION                                                                                       
+476;Creo que esto no aplica.                                                                            
+477;Acceso a las colas de Remedy para el usuario WUEPES02.                                              
+478;Acceso al usuario WUENRO08 con las colas para IP NOC                                                
+479;Solicitud de acceso a NSIM para el usuario WUEPES02.                                                
+480;Solicitud de acceso a NSIM para el usuario WUENRO08.                                                
+481;no parece ser relevante                                                                             
+482;JIRA                                                                                                
+483;N.A.                                                                                                
+484;Pangea PRE y PRO, NSIM PRE y PRO                                                                    
+485;Es el entorno de produccion, pero la aplicacion no deja seleccionarlo.                              
+486;es entorno de producción                                                                            
+487;la solicitud es para produccion                                                                     
+488;Copiar roles en FAST                                                                                
+489;SI ES PRODUCCION                                                                                    
+490;Genesis Workspace                                                                                   
+491;NO                                                                                                  
+492;Acceso a OMI con el perfil del IP NOC para el usuario WUEPES02.                                     
+493;Acceso a OMI con los perfiles de IP NOC para WUENRO08.                                              
+494;IAM                                                                                                 
+495;Remedy                                                                                              
+496;https://pre.fast.telefonica.com/ncobject.jsp?id=9158628374613679938                                 
+497;es un entorno de producción                                                                         
+498;Producción.                                                                                         
+499;EP0 Latam / Europa                                                                                  
+500;Arlanxeo                                                                                            
+501;No entiendo este campo                                                                              
+502;tacacs                                                                                              
+503;entorno produccion                                                                                  
+504;no entiendo esto!! no me permite seleccionar PRODUCTION en la casilla anterior. Los permisos pedi...
+505;CREACION DE CESTAS POR RAZON DE CARGO                                                               
+506;Solicitamos añadir al usuario WUESGA08 el acceso a la cola de RoD de CIC NOC.                       
+507;xxx                                                                                                 
+508;TODOS                                                                                               
+509;DEVELOPMENT, PREPRODUCTION & PRODUCTION                                                             
+510;Desconocido                                                                                         
+511;PRE/Staging/maqueta                                                                                 
+512;Production environment                                                                              
+513;TABLEAU                                                                                             
+514;Es producción pero no me deja seleccionar otra cosa                                                 
+515;CWP                                                                                                 
+516;Hace parte de fluxo de compras                                                                      
+517;FAST PRODUCTION                                                                                     
+518;PANGEA                                                                                              
+519;Datos que se cargan en BBDD propia                                                                  
+520;Aceso                                                                                               
+521;gpltfmadpe01 y gpltfmadpe02                                                                         
+522;PIN CODE                                                                                            
+523;Mobile                                                                                              
+524;ALDI North                                                                                          
+525;Se requiere urgentemente                                                                            
+526;https://ams-rsso1-dev.onbmc.com/rsso/start?bypass-auth=true&tenant=infinity-cert-dev&goto=https:/...
+527;OSS's                                                                                               
+528;El ambiente es Produccion, pero DUNA no me da la opcion                                             
+529;no entiendo                                                                                         
+530;NO PRODUCCION                                                                                       
+531;No me sale la opción de Production, por eso he marcado no production                                
+532;SUGUS                                                                                               
+533;Entornos preproductivos FAST TOMS                                                                   
+534;PRODUCTION (LOGOS)                                                                                  
+535;LIquidaciones                                                                                       
+536;OI en estado EoL                                                                                    
+537;non                                                                                                 
+538;PREPRODUCTION & PRODUCTION                                                                          
+539;Producción EP0                                                                                      
+540;DUNA de Producción (https://discover.wh.telefonica/)                                                
+541;10.30.170.40                                                                                        
+542;PRODUCTON                                                                                           
+543;Desconozco el dato                                                                                  
+544;RoD CERT DEV                                                                                        
+545;ALDI NORTE                                                                                          
+546;Read Only Access to Production Envrironment                                                         
+547;Please provide Read Only Access in the Production environment - no SLA Associated is ok.            
+548;Subir documentos a LOGOS mensualmente.                                                              
+549;Splunk                                                                                              
+550;PRE - LABORATORIO                                                                                   
+551;SI es producción , es EP0                                                                           
+552;NON PRODUCTION                                                                                      
+553;PLUSPETROL                                                                                          
+554;yes                                                                                                 
+555;Jenkins                                                                                             
+556;FedEX Production Solarwinds View                                                                    
+557;Solicito cliente ACME para el customer web portal                                                   
+558;Solicitud cliente ACME en el Customer Web Portal                                                    
+559;Solicitar acceso a SEDA                                                                             
+560;NSIM PRE y PRO                                                                                      
+561;acceso a Seda como usuario interno                                                                  
+562;Acceso al portal SEDA por requerimiento de mi puesto                                                
+563;Acceso al servicio de VManage para usuario interno                                                  
+564;production environment needed                                                                       
+565;\\fileshare.TEFGAD.com\gruposTM\Sopreinred                                                          
+566;NON-PRODUCTIVE ENVIRONMENT                                                                          
+567;https://iaas2.vdc.telefonica.com                                                                    
+568;No se que tengo que indicar en este campo                                                           
+569;No me deja seleccionar Producción                                                                   
+570;OFFICE 365                                                                                          
+571;NSO Cert                                                                                            
+572;Necessito reactivar el acesso a SAP que tenia.                                                      
+573;poder hacer seguir con el proyecto antifraude                                                       
+574;si                                                                                                  
+575;GLOBAL SAP                                                                                          
+576;VERA                                                                                                
+577;ALDI                                                                                                
+578;OPERACIONES - Quality Control - SMC Hamburg                                                         
+579;Desarrollo:                                                                                         
+580;Necesito acceso a SalesForces                                                                       
+581;EUREKA                                                                                              
+582;OMI                                                                                                 
+583;?                                                                                                   
+584;NNN                                                                                                 
+585;4                                                                                                   
+586;Instancia EC2 para el Nodo Edge de Pre                                                              
+587;administración/soporte                                                                              
+588;FATS                                                                                                
+589;Salesforce Seguridad Externa                                                                        
+590;https://logos.telefonicabusinesssolutions.com/sites/presalesOffRep                                  
+591;https://traful-elastic.telefonicabusinesssolutions.com/                                             
+592;MANTENIMIENTO                                                                                       
+593;RBM CRT                                                                                             
+594;???                                                                                                 
+595;Cambio usuario Jorge Dominguez                                                                      
+596;Telefonica Tech                                                                                     
+597;Panda                                                                                               
+598;Connection from my laptop at home to the Office VPN                                                 
+599;openshift->TBS->tgs-vmultimedia                                                                     
+600;TSP                                                                                                 
+601;Hola, es Logos en producción, pero no me deja seleccionarlo.                                        
+602;InfoBlox access request                                                                             
+603;REMEDY ON DEMAND                                                                                    
+604;EP00                                                                                                
+605;Economics                                                                                           
+606;salesforce                                                                                          
+607;Salesforce BI_EN                                                                                    
+608;Infoblox Grid Manager                                                                               
+609;Cert_dev                                                                                            
+610;Ambiente de producion                                                                               
+611;Servidor                                                                                            
+612;xx                                                                                                  
+613;BW PRODUCTION (BP1)                                                                                 
+614;Preproducción (traful.splunkcloud.com)                                                              
+615;RDB Plat                                                                                            
+616;Success Factors                                                                                     
+617;VPn Cisco AnyConnect                                                                                
+618;El objetivo de la petición es sobre todo visualizar gráficas de tráfico de datos                    
+619;URGENTE                                                                                             
+620;Reportes de Tableau de TGS Transformation & Operational Efficiency                                  
+621;VPN Cisco                                                                                           
+622;..                                                                                                  
+623;"Remedy on Demand de PRODUCCIÓN (no me aparece ""PRODUCCIÓN"" en el desplegable del campo ""Environ...  "
+624;Tableros economicos TGS                                                                             
+625;Viajes                                                                                              
+626;TELFONICA GPOC                                                                                      
+627;Logos                                                                                               
+628;CP0                                                                                                 
+629;Secure CRT                                                                                          
+630;Ambiente de producción                                                                              
+631;UNKNOWN TO REQUESTER                                                                                
+632;AGORA                                                                                               
+633;PRO, PRE, MIG, TST, PLAT, UAT, CERT en RBM y Microservicios                                         
+634;10.30.187.219/login                                                                                 
+635;https://aldis.vmanage.telefonicaglobalsolutions.com/                                                
+636;Teams                                                                                               
+637;Almacenamiento gplbkalhta02                                                                         
+638;None                                                                                                
+639;vManage                                                                                             
+640;PRODUCTION - OUTLOOK DIRECTORIO                                                                     
+641;Necesito acceso a entorno de producción, pero no da la opción.                                      
+642;Es para entorno de producción, pero no da opción de escoger PRODUCCIÓN                              
+643;OMI RED                                                                                             
+644;OMI CLIENTES                                                                                        
+645;Calidad                                                                                             
+646;Preprodución logos                                                                                  
+647;Entorno no productivo es un relay                                                                   
+648;*** THIS NON-PRODUCTION ENVIRONMENT DOES NOT HAVE ASSOCIATED***                                     
+649;TIWS                                                                                                
+650;OUTLOOK                                                                                             
+651;ninguno                                                                                             
+652;EPO                                                                                                 
+653;Production Enviroment                                                                               
+654;Not pplicable - necesito acceso a SRM para crear cestas                                             
+655;I need access to the TBS installations calendar                                                     
+656;.... No se que esten requiriendo aquí                                                               
+657;Acceso a la VPN                                                                                     
+658;Cliente NH hoteles                                                                                  
+659;fast oapi                                                                                           
+660;visualizacion                                                                                       
+661;nuevo usuario                                                                                       
+662;TELESAP                                                                                             
+663;RElleno este campo porque no me da la opcion de poner PRosegur en producción                        
+664;CEX                                                                                                 
+665;FINANZAS                                                                                            
+666;TIWS_BR                                                                                             
+667;no producccion                                                                                      
+668;bla bla bla                                                                                         
+669;ASA Maqueta                                                                                         
+670;Producción y pre produccion                                                                         
+671;PRE - Producción                                                                                    
+672;seguimiento instalaciones                                                                           
+673;RDB de plat                                                                                         
+674;PRO, UAT, DEV, CERT                                                                                 
+675;Globalsap                                                                                           
+676;OH                                                                                                  
+677;PRODUCCTION REMEDY ON DEMAND                                                                        
+678;"I want to reopen LLD task #084747096 (now it's ""skip"" should be ""complete"" ).                       "
+679;No production Vmanage                                                                               
+680;PROSEGUR                                                                                            
+681;dev, plat, cert y mig.                                                                              
+682;ET0                                                                                                 
+683;10.30.142.110                                                                                       
+684;https://duna-dev-smartit.onbmc.com                                                                  
+685;https://duna-dev-smartit.onbmc.com/smartit/app/                                                     
+686;jira, fast non production, remedy, etc.                                                             
+687;DEV, PLAT, CERT y MIG                                                                               
+688;No.                                                                                                 
+689;Order & Handling                                                                                    
+690;Cliente en provision                                                                                
+691;SAP EPM                                                                                             
+692;Verallia                                                                                            
+693;proyecto SDWAN Prosegur                                                                             
+694;Acceso a vManage                                                                                    
+695;vManage cliente  Verallia                                                                           
+696;COMPRAS                                                                                             
+697;PRODUCCION EP0 Y ETO                                                                                
+698;PRE-TRAFUL                                                                                          
+699;Portal Tesoreria, Telbank                                                                           
+700;BMC Discovery                                                                                       
+701;Non Production Environment                                                                          
+702;Nueva incorporacion                                                                                 
+703;x                                                                                                   
+704;DEV-PRE                                                                                             
+705;para revisión de contratos y documentos                                                             
+706;CGP                                                                                                 
+707;We request access for Prosegur Vmanage                                                              
+708;Entiendo que es vuestro CMDB de trabajo ¿Producion?                                                 
+709;PRODUCTION pero no lo puedo elegir en el desplegable                                                
+710;EP0, SP0                                                                                            
+711;Solicito alta en VMANAGE de PROSEGUR con acceso ReadOnly                                            
+712;Telbank                                                                                             
+713;CFP                                                                                                 
+714;Splunk (Openshift)                                                                                  
+715;Solicity su atencion                                                                                
+716;Solicitó aceso                                                                                      
+717;SMC NGN & SIPTRUNK L1                                                                               
+718;es de produccion                                                                                    
+719;gplcomadpe04.priv.net.telefonicaglobalsolutions.com                                                 
+720;Sociedad 1897                                                                                       
+721;Demo1                                                                                               
+722;NSO PRE                                                                                             
+723;DUNA (https://duna-smartit.onbmc.com/smartit/app/#/person/WUEEPI04)                                 
+724;Problem Management                                                                                  
+725;https://duna-smartit.onbmc.com/smartit/app/#/ticket-console                                         
+726;NSIM PRODUCTION                                                                                     
+727;en production                                                                                       
+728;Problem with PO Modify TDESP INDIT MPLS VPN Site #084809273                                         
+729;Dashboard                                                                                           
+730;Hay que darles acceso a Tableau en el entorno de PRO como usuarios.                                 
+731;Not sure about the information I should complete here                                               
+732;EL CLIENTE ESTÁ EMPEZANDO LA MIGRACION PARA SDWAN DE TGS EN 12/06/2021                              
+733;SI es produccion pero no me deja seleccionar.                                                       
+734;CPO                                                                                                 
+735;es produccion pero no deja completar la opcion en el desplegable anterior                           
+736;RDB de UAT                                                                                          
+737;PRE (implica parada)                                                                                
+738;Herramientas Office                                                                                 
+739;El entorno debería ser de producción                                                                
+740;https://de-rsso1-dev.onbmc.com/rsso/start?bypass-auth=true&tenant=duna-dev&goto=https://duna-dev....
+741;Acceso a usuario wuelan02 con el perfil netadmin                                                    
+742;Telarix PRE/Staging                                                                                 
+743;Cemex                                                                                               
+744;Problem with PO New TDESP INDIT MPLS VPN Site #084733933                                            
+745;PRODUCCION - GENESYS                                                                                
+746;DES/UAT                                                                                             
+747;BART                                                                                                
+748;se necesita en el entorno de producción                                                             
+749;Alta 168.194.74.178/32 acceso https://ddosshield.telefonicaglobalsolutions.com.                     
+750;I need access to pluspetrol vmanage                                                                 
+751;Global SAP IRJ                                                                                      
+752;Acceso a pangea Cliente Cuatrecasas                                                                 
+753;AWS PRE-PROD Telaris                                                                                
+754;order management                                                                                    
+755;GPMs                                                                                                
+756;Ariba                                                                                               
+757;IT Administrations                                                                                  
+758;Access to Netrounds                                                                                 
+759;no producion                                                                                        
+760;son varios  servidores                                                                              
+761;TGSDEVCOE                                                                                           
+762;AWS Pre.PROD Telarix                                                                                
+763;Base de datos SQL Microsoft                                                                         
+764;Alta usuario RoD                                                                                    
+765;SOY GSM PARA PLUSPETROL CORPORATE QUE UTILIZA SOLARWINDS Y NECESITO DE ACCESO  Y TB PARA EL CLIEN...
+766;https://10.30.191.49:8002/                                                                          
+767;IP                                                                                                  
+768;ALCHEMY,HERMES,VITA                                                                                 
+769;pre replicas                                                                                        
+770;NAKIVO                                                                                              
+771;SAP GRC ACCESS CONTROL                                                                              
+772;*** THIS NON-PRODUCTIVE ENVIRONMENT DOES NOT HAVE ASSOCIATED SLAs ***                               
+773;Replica                                                                                             
+774;Producction                                                                                         
+775;NH HOTELES                                                                                          
+776;https://oo-pre.cic.wh.telefonica:8443/oo/rest/v2/executions/ (Entorno pre producción)               
+777;OMI usado para monitorizar servicios con ticketing automatico: mWAN, SDWAN,  MLAN. ..               
+778;https://sugus.telefonica.com/identity/?_afrLoop=25367917009579912&_afrWindowMode=0&_afrWindowId=n...
+779;Device Capability                                                                                   
+780;FAST/UAT - RoD/CERT                                                                                 
+781;vRBS                                                                                                
+782;Proc                                                                                                
+783;RBM                                                                                                 
+784;Cambio en permisos                                                                                  
+785;¿?                                                                                                  
+786;Internal access SMC could use direct links                                                          
+787;No se que va acá                                                                                    
+788;IxReport                                                                                            
+789;USUARIO NO LOGRA GENERAR DUNA                                                                       
+790;UAT, mCatalogue                                                                                     
+791;GPOC                                                                                                
+792;VM 10.30.133.47                                                                                     
+793;https://portal.apps.ocp.cic.wh.telefonica  -->opensift --> tbs                                      
+794;https://origen.net.telefonicaglobalsolutions.com/secure/Dashboard.jspa                              
+795;"UAT ; PRE ; CERT                                                                                    "
+796;ADDM                                                                                                
+797;VPN connect 1 PRO                                                                                   
+798;Traful-Pre Kibana                                                                                   
+799;Portal de Tesorería                                                                                 
+800;https://logos.telefonicabusinesssolutions.com/sites/dsp/Shared%20Documents/Forms/AllItems.aspx?Fo...
+801;SAP EP0                                                                                             
+802;JIRA DSS                                                                                            
+803;OMI MAQUETA                                                                                         
+804;Acceso a https://discovery.telefonicabusinesssolutions.com                                          
+805;Permisos vpn de adminIT                                                                             
+806;En ambiente de producción.                                                                          
+807;QUICKSIGHT                                                                                          
+808;NO PRODCUTION                                                                                       
+809;Relocate New TDESP CORTE DIA-Internet Resale Unmanaged #002468722                                   
+810;AWS Staging                                                                                         
+811;Problem with PO Modify TDESP INDIT MPLS VPN Site #099417560                                         
+812;Es en producción, pero no me da otra opción el campo Environment type                               
+813;I don't know what is required                                                                       
+814;Necesitamos acceso rápido porque estamos de cierre de mes y no puede trabajar mientras              
+815;PRODUC                                                                                              
+816;nsim                                                                                                
+817;GRC                                                                                                 
+818;glltfmadpe12 (10.30.191.33)                                                                         
+819;Acceso de administracion                                                                            
+820;Duna donde se registran los CRS                                                                     
+821;need production environment                                                                         
+822;OMI Plataformas                                                                                     
+823;Acceso Autocotizador Mayorista                                                                      
+824;Problem with PO Migrate Modify TDESP INDIT MPLS VPN Site #084782977                                 
+825;PRE y PRO Production                                                                                
+826;MDS Tambore - Produccion                                                                            
+827;https://discovery.telefonicabusinesssolutions.com/                                                  
+828;https://pre-traful-elastic.telefonicabusinesssolutions.com                                          
+829;Legal                                                                                               
+830;EMR-Edge-pre                                                                                        
+831;HCS Lab                                                                                             
+832;DEV, PRE, MIG                                                                                       
+833;Hola, necesito que me den acceso a la herramienta de PowerBI+.                                      
+834;EP0, GFP Portal de viajes Fiori                                                                     
+835;VPN External                                                                                        
+836;Tech Lab IP Technology (TLIT)                                                                       
+837;Maquinas de salto GPLCOMADPE11 (10.30.190.55)                                                       
+838;PRE CLUSTER 3 y 4                                                                                   
+839;equipos de red TGS                                                                                  
+840;PRE - Coptero                                                                                       
+841;FAST UATs                                                                                           
+842;Se requiere acceso a produccion.                                                                    
+843;check                                                                                               
+844;Produción.                                                                                          
+845;Plataforma VMANAGER                                                                                 
+846;pre-traful-elastic                                                                                  
+847;ST0 (SRM Pre-Prod)                                                                                  
+848;ITlab                                                                                               
+849;PRE API, TOMS, seda                                                                                 
+850;Splunk PRO/PRE                                                                                      
+851;NSIM IT INFRASTRUTURES                                                                              
+852;OMI DPS PRE - HPOO CENTRAL PRE                                                                      
+853;Help to give me (weenet01) the following roll: MSIP Phonebook Role                                  
+854;Problem with PO Migrate Modify TDESP INDIT MPLS VPN Site #079180590                                 
+855;Portal JIRA                                                                                         
+856;ARIS PRE Mapro                                                                                      
+857;Creacion de cuenta en global SAP                                                                    
+858;GPM                                                                                                 
+859;HPOO PRE                                                                                            
+860;Production not available via drop down menu                                                         
+861;GSAP y TSAP                                                                                         
+862;cemex project                                                                                       
+863;It is a non production environment.                                                                 
+864;CMEX Project                                                                                        
+865;Replica PRE                                                                                         
+866;Capacity_interno Capacity_SDWAN_Others_v1.8                                                         
+867;trabajo                                                                                             
+868;VPN TGS                                                                                             
+869;NSIM PRO y PRE                                                                                      
+870;Servicio Ethernet                                                                                   
+871;vsat                                                                                                
+872;EP0, SRM, SP0                                                                                       
+873;Carpeta Logos                                                                                       
+874;Global SAP Portal                                                                                   
+875;Pangea MANAGED SIPTRUNK                                                                             
+876;Help me to give me (wueamo25) the following roll: MSIP Phonebook Role                               
+877;PLAT, UAT                                                                                           
+878;https://pre-traful-elastic.telefonicabusinesssolutions.com/login?next=%2F#?_g=()                    
+879;Acceso para el user wueaca61                                                                        
+880;se requiere para produccion,                                                                        
+881;1900 TGS Colombia                                                                                   
+882;Preproducción logos                                                                                 

@@ -1,0 +1,180 @@
+---
+title: "ACTIVIDAD 3 -- UD3 PEDRO LLULL"
+output:
+  pdf_document:
+    latex_engine: xelatex
+  html_notebook: default
+  html_document: default
+---
+
+## Apartado A
+Pensemos que tenemos el CI de una muestra de 5 individuos:
+ 110
+ 100
+ 115
+ 105
+ 104
+
+Queremos (caso 1) calcular el intervalo de confianza sobre la media
+(al 95%) y (caso 2) indicar si tales sujetos han sido extraidos de una
+poblacion con media 100.
+
+```{r}
+# Datos de la muestra
+muestra_datos <- c(110, 100, 115, 105, 104)
+
+# Calcular el intervalo de confianza al 95%
+resultado <- t.test(muestra_datos, conf.level = 0.95)
+
+print(resultado)
+```
+```{r}
+# Datos de la muestra
+muestra_datos <- c(110, 100, 115, 105, 104)
+
+# Realizar una prueba t de una muestra para verificar si la media es 100
+resultado <- t.test(muestra_datos, mu = 100)
+
+print(resultado)
+```
+El valor de p (p-value) es 0.05884, lo cual está ligeramente por encima de un nivel significativo de 0.05. Esto significa que no podemos rechazar la hipótesis nula de que la media de la muestra es igual a 100 a un nivel de confianza del 95%. Además, el intervalo de confianza del 95% para la media se encuentra entre 99.59193 y 114.00807, lo que incluye el valor de 100.
+
+
+
+## Apartado B
+Dado el dataset survey visto previamente, queremos contrastar si la diferencia del pulso entre 
+hombres y mujeres es diferente o no
+¿se puede considerar que el pulso de las mujeres es superior al de los hombres
+a un nivel de confianza del 90% ?
+
+```{r}
+library(MASS)
+data("survey")
+survey
+```
+
+```{r}
+# Dividir los datos en dos grupos: hombres y mujeres
+pulso_hombres <- survey$Pulse[survey$Sex == "Male"]
+pulso_mujeres <- survey$Pulse[survey$Sex == "Female"]
+
+# Realizar la prueba t para comparar las medias de pulso entre los dos grupos
+resultado_prueba <- t.test(pulso_mujeres, pulso_hombres, alternative = "greater", conf.level = 0.90)
+
+print(resultado_prueba)
+```
+Dado que el valor p (0.1282) es mayor que el nivel (0.10) con un nivel de confianza del 90%, no hay evidencia estadística suficiente para rechazar la hipótesis nula. Con los datos disponibles y el nivel de confianza y significancia seleccionados, no se puede considerar que el pulso de las mujeres sea significativamente superior al de los hombres en esta población.
+
+
+
+## Apartado C
+
+**Ley de Benford**
+Se ha mandado una factura a la empresa Xdata que parece ser falsa. 
+Esta factura tiene muchos números que no parecen generados de modo natural.
+Comprobamos si efectivamente la factura está generada artificalmente
+basándonos en la Ley de Benford https://es.wikipedia.org/wiki/Ley_de_Benford
+ 
+Esta ley trata sobre la distribución de los primeros dígitos en:
+- facturas
+- artículos en revistas
+- direcciones de calles
+- precios de acciones
+- número de habitantes
+- tasas de mortalidad
+- longitud de los ríos
+- Física
+- constantes matemáticas
+- números primos
+
+La ley Benford establece que la distribución natural de los primeros dígitos  es
+
+      0.301,0.176,0.125,0.097,0.079,0.067,0.058,0.051,0.046
+
+Las frecuencias de los primeros dígitos de las facturas de la empresa resultan ser
+
+      7, 13, 12,  9,  9, 13, 11, 10, 16
+
+¿Son facturas falsas?
+
+```{r}
+# Frecuencias observadas
+frecuencias_observadas <- c(7, 13, 12, 9, 9, 13, 11, 10, 16)
+
+# Frecuencias esperadas según la Ley de Benford
+frecuencias_esperadas <- c(0.301, 0.176, 0.125, 0.097, 0.079, 0.067, 0.058, 0.051, 0.046)
+
+# Realizamos el test chi-cuadrado
+resultado_chi_cuadrado <- chisq.test(frecuencias_observadas, p = frecuencias_esperadas)
+
+resultado_chi_cuadrado
+```
+Dado que el p-valor es significativamente menor que cualquier nivel de comúnmente utilizado (como 0.05), esto sugiere que hay una diferencia significativa entre las frecuencias observadas en las facturas y las frecuencias esperadas según la Ley de Benford.En este caso, podríamos concluir que las facturas podrían ser falsas, pero no con total seguridad. 
+
+
+
+## Apartado D
+
+Carga el dataset "PlantGrowth"
+```{r}
+data("PlantGrowth")
+PlantGrowth
+```
+
+- Haz un análisis exploratorio
+```{r}
+# Cargamos la librería necesaria
+library(ggplot2)
+
+# Cargamos los datos
+data(PlantGrowth)
+
+# Resumen estadístico
+summary(PlantGrowth)
+
+# Boxplot
+ggplot(PlantGrowth, aes(x = group, y = weight, fill = group)) +
+  geom_boxplot() +
+  labs(title = "Boxplot del Crecimiento de las Plantas por Tratamiento")
+```
+
+- Comprueba las asunciones del modelo
+```{r}
+# Comprobar la normalidad de los residuos
+shapiro.test(PlantGrowth$weight)
+```
+Test de Shapiro-Wilk para la normalidad de los residuos:
+El test de Shapiro-Wilk se utiliza para verificar si los datos siguen una distribución normal. En este caso, se aplicó a la variable "weight" (peso) de las plantas.
+El p-valor es 0.8915 mayor que 0.05 (nivel de significancia típico), lo que significa que no hay evidencia suficiente para rechazar la hipótesis nula. En otras palabras, los datos no muestran una diferencia significativa de una distribución normal.
+
+
+
+- Realiza el one-way ANOVA
+```{r}
+# ANOVA test asumiendo varianzas distintas
+oneway.test(weight ~ group, data = PlantGrowth)
+# ANOVA test asumiendo varianzas iguales
+oneway.test(weight ~ group, var.equal=TRUE, data = PlantGrowth)
+# ANOVA alternativo
+anova_result <- aov(weight ~ group, data = PlantGrowth)
+
+# Resumen del ANOVA
+summary(anova_result)
+```
+Resultado del ANOVA:
+
+En los tres análisis ANOVA el p-valor es menor a 0,05 por lo que se rechaza la hipótesis nula.
+El valor de p es menor que 0.05, lo que indica que al menos uno de los grupos tiene un efecto significativo en la variable "weight". En otras palabras, hay diferencias significativas en el crecimiento de las plantas entre los grupos.
+
+En resumen, los resultados sugieren que existe evidencia de que al menos uno de los tratamientos (grupos) tiene un efecto significativo en el crecimiento de las plantas. Para determinar los grupos se pueden hacer más pruebas.
+
+
+- ¿Qué conclusiones se pueden inferir de esta muestra?
+Con el análisis exploratoro y viendo la gráficas de boxplot se puede identificar a ojo que existe una diferencia significativa entre el crecimiento y el tipo de tratamiento.
+
+- ¿Se puede considerar que con los tres tratamientos las plantas tienen el mismo crecimiento?
+No se puede considerar. El análisis de varianza (ANOVA) realizado da un valor de p significativamente menor que 0.05, lo que indica que al menos uno de los tratamientos tiene un efecto significativo en el crecimiento de las plantas.
+
+En resumen, los resultados del ANOVA sugieren que los tres tratamientos tienen un impacto diferente en el crecimiento de las plantas, y no se puede considerar que tengan el mismo crecimiento.
+
+  

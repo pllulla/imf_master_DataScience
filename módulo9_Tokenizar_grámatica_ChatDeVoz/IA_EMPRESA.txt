@@ -1,0 +1,45 @@
+INTELIGENCIA ARTIFICIAL PARA LA EMPRESA
+
+
+4a revolución industrial
+
+Capacidad de una máquina de asimilar y llevar a cabo comportamientos humanos, acciones
+
+La inteligencia artificial no está regulada, no hay estándar, no tiene un fin común
+
+Estamos en una época de inteligencia artificial DÉBIL
+Vendrá la FUERTE
+A futuro la SUPER_IA
+
+1950 Test de Turing
+1956 Conferencia de Dartmouth, primera conferencia que establece la IA
+1964 ELIZA primer chat conversacional
+1966 Shakey primer robot
+
+DESPUÉS hubo un invierno en la IA.... 1960 - 1980
+Costaba mucho hacer temas de IA, por capacidad de computación, almacenamiento y presupuesto
+
+1993 PRoyecto COG (robot)
+1997 Depp Blue, IBM desarrolla un algoritmo que gana a KASPAROV en ajedrez
+1999 AIBO perrito robot
+2011 SIRI
+2011 Watson
+2016 ALPHAGO de GOOGLE juegos de mesa por IA
+
+RAMAS DE LA IA:
+Sistemas expertos (especialización) --- basados en reglas, basados en redes bayesianas, basados en casos
+
+Aprendizaje autónomo (aprenden en base al conocimiento) --- Tienen cierta capacidad de razonamiento y anticipación
+		SUPERVISADO, NO SUPERVISADO, POR REFUERZO
+		
+Computer Vision, visión artificial
+
+Reconocimiento del habla
+
+Procesamiento de lenguaje natural NLP
+
+Robótica
+
+Computación evolutiva
+
+Inteligencia de enjambres

@@ -1,0 +1,4 @@
+Este es un ejemplo de un documento de texto.
+Este es otro ejemplo de documento.
+Cada documento tiene varias palabras.
+Las palabras pueden repetirse en los documentos.

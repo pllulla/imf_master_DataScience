@@ -1,0 +1,19 @@
+{ "_id" : "02906", "city" : "PROVIDENCE", "pop" : 31069, "state" : "RI", "capital" : { "name" : "Providence", "electoralCollege" : 4 } }
+{ "_id" : "02108", "city" : "BOSTON", "pop" : 3697, "state" : "MA", "capital" : { "name" : "Boston", "electoralCollege" : 11 } }
+{ "_id" : "10001", "city" : "NEW YORK", "pop" : 18913, "state" : "NY", "capital" : { "name" : "Albany", "electoralCollege" : 29 } }
+{ "_id" : "01012", "city" : "CHESTERFIELD", "pop" : 177, "state" : "MA", "capital" : { "name" : "Boston", "electoralCollege" : 11 } }
+{ "_id" : "32801", "city" : "ORLANDO", "pop" : 9275, "state" : "FL", "capital" : { "name" : "Tallahassee", "electoralCollege" : 29 } }
+{ "_id" : "12966", "city" : "BANGOR", "pop" : 2867, "state" : "NY", "capital" : { "name" : "Albany", "electoralCollege" : 29 } }
+{ "_id" : "32920", "city" : "CAPE CANAVERAL", "pop" : 7655, "state" : "FL", "capital" : { "name" : "Tallahassee", "electoralCollege" : 29 } }
+{ "_id" : "NY", "name" : "New York", "pop" : 28300000, "state" : 1788 }
+{ "_id" : "33125", "city" : "MIAMI", "pop" : 47761, "state" : "FL", "capital" : { "name" : "Tallahassee", "electoralCollege" : 29 } }
+{ "_id" : "RI", "name" : "Rhode Island", "pop" : 1060000, "state" : 1790 }
+{ "_id" : "MA", "name" : "Massachusetts", "pop" : 6868000, "state" : 1790 }
+{ "_id" : "FL", "name" : "Florida", "pop" : 6800000, "state" : 1845 }
+{ "_id" : "1", "name" : "Tom", "addresses" : [ "01001", "12997" ] }
+{ "_id" : "02907", "city" : "CRANSTON", "pop" : 25668, "state" : "RI", "capital" : { "name" : "Providence", "electoralCollege" : 4 } }
+{ "_id" : "2", "name" : "Bill", "addresses" : [ "01001", "12967", "32920" ] }
+{ "_id" : "3", "name" : "Mary", "addresses" : [ "32801", "32920", "33125" ] }
+{ "_id" : "12967", "city" : "NORTH LAWRENCE", "pop" : 943, "state" : "NY", "capital" : { "name" : "Albany", "electoralCollege" : 29 } }
+{ "_id" : "01001", "city" : "AGAWAM", "pop" : 15338, "state" : "MA", "capital" : { "name" : "Boston", "electoralCollege" : 11 } }
+{ "_id" : "12997", "city" : "WILMINGTON", "pop" : 958, "state" : "NY", "capital" : { "name" : "Albany", "electoralCollege" : 29 } }

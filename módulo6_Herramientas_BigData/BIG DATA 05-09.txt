@@ -1,0 +1,74 @@
+Tecnología y herramientas Big Data
+Todo lo relacionado con las herramientas y que es y no es, Big Data
+
+
+
+Paralelo: misma máquina
+Distribuido: varias máquinas (procesos grandes)ç
+
+Un sistema paralelizado se puede distribuir (o distribuir un sistema paralelizado) pero un sistema distribuido no se puede paralelizar
+
+
+Big Data: Gran cantidad de datos, distribuidos y las tecnologías actuales que permiten su procesamiento en contra de las tecnologías del pasado
+
+Lo que es el big data y el análisis de datos existe desde hace décadas pero es con las tecnologías y capacidades
+actuales, que se han empezado a explotar de forma eficiente
+
+La estrella de el big data es la DISTRIBUCIÓN
+
+
+Con el big data, Se necesita método científico?
+	Si, para poder sacar conclusiones e información útil de esos datos a raíz de pruebas
+	
+Qué es un data lake y para que sirve?
+	Es Un gran repositorio de datos, muy grande, con datos sin estructurar y estructurados
+	
+
+
+GCP Google Cloud Computing
+
+GRAFO un pipeline o gráfica de pasos  decisión > desarrollo > análisis
+
+Airflow (en GCP, Composer) es una herramienta que permite construir pipelines en formato de DAG
+
+Airflow es una herramienta de orquestación y planificación, no orientada a datos en streaming aunque puede utilizarse con datos en tiempo real ingestando datos en (micro) batches
+
+Como científicos de datos trabajando en la nube debéis conocer dos de las tecnologías más utilizadas a nivel de ingesta y procesamiento de datos: almacenamiento de objetos y de grandes volúmenes de información en la nube
+
+Todo lo que es con baja latencia o en streaming, es más caro
+
+HBASE es la BBDD nativa de HADOOP
+HDSF Hadoop Distribued File sistem
+Tolerancia a fallos
+Los ficheros se guerdan en bloques particionados
+Procesamiento a lo largo de múltiples máquinas
+
+
+Google fue uno de los precursores de HADOOP por la necesidad de analizar grandes cantidades de datos a gran velocidad
+
+MAP REDUCE modelo de programación se centra en las operaciones lógicas
+
+Map: cómo debo generar el par KEY, VALUE | DISTRIBUCUIÓN de los ficheros o datos
+Reduce: Cómo debo combinarlos | CONTEO de los datos
+YARN se encarga de la orquestación de estos trabajos
+
+Se prepara la entrada del Map(): Partición y diseminación de los datos
+Se ejecuta Map() en cada nodo (mapper). La salida de cada sub-problema se identifica con una clave intermedia
+Se bajara y ordena (shuffle and sort) la salida de cada Map(), usando la clave intermedia
+Ejecuta Reduce() en cada nodo. Cada reducer procesa los datos asociados a una clave intermedia
+Se agrupa la salida de los reducers como resultado final
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

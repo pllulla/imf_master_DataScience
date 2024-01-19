@@ -1,0 +1,5 @@
+id_tipo_servicio;nombre_tipo_servicio
+1;Evento de infraestructura                         
+2;Petición de serv. por el usuario                  
+3;Restauración de infraestructura                   
+4;Restauración de servicio a usuario                

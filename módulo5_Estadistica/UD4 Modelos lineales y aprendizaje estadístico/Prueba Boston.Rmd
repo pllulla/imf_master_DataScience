@@ -1,0 +1,53 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(MASS)
+data(Boston)
+head(Boston)
+```
+
+```{r}
+Boston2 <- Boston[Boston$medv<50,]
+hist(Boston2$medv,20)
+```
+
+```{r}
+mod <- lm(medv~.,data=Boston2)
+summary(mod)
+```
+```{r}
+fit1 <- lm(medv~crim+zn+indus+chas+nox+rm+age+dis+tax+ptratio+black+lstat,data=Boston2)
+fit0 <- lm(medv~1,data=Boston2)
+stepAIC(fit0,direction="forward",scope=list(upper=fit1,lower=fit0))
+```
+
+
+```{r}
+stepAIC(fit1,direction="backward")
+stepAIC(fit0,direction="both",scope=list(upper=fit1,lower=fit0))
+```
+
+```{r}
+mod <- lm(medv ~ lstat + rm + ptratio + tax + black + dis + nox + age + zn + crim
++ indus,data= Boston2)
+extractAIC(mod,scale=0)
+coefficients(mod)
+hist(mod$residuals)
+qqnorm(mod$residuals)
+qqline(mod$residuals)
+shapiro.test(mod$residuals) #hay un fuerte sesgo hacia la derecha y no es normal la distribución
+summary(mod)
+```
+
+```{r}
+extractAIC(lm(medv ~ lstat + rm + ptratio + tax + black + dis + nox + age + zn +
+crim + indus,data= Boston2),scale=0)
+extractAIC(lm(medv ~ lstat + rm + ptratio + black + dis + nox + age + zn + crim
++ indus,data= Boston2),scale=0)
+```
+
+

@@ -1,0 +1,161 @@
+---
+title: "ACTIVIDAD GRUPAL 2 - UD2 TITANIC"
+author : "Pedro Llull Alles"
+output:
+  html_notebook: default
+  html_document: default
+  pdf_document: default
+---
+
+install.packages("Rtools")
+# Carga el datas€t **titanic** con el comando y haz un sumario
+
+```{r}
+install.packages("titanic")
+library(titanic)
+df <- titanic_train
+head(df)
+str(df)
+colnames(df)
+
+```
+
+
+- Transforma las variables que sean factores en factores. Si son ordinales usa *ordered* para crear factores ordenados. Recuerda usar lapply.
+
+```{r}
+# Lista de columnas que deben ser factores o factores ordenados
+cols_to_factors <- c("Pclass", "Sex", "Embarked")
+
+# Transformar las variables en factores
+df[cols_to_factors] <- lapply(df[cols_to_factors], function(x) {
+  if (is.ordered(x)) {
+    # Si ya es un factor ordenado, no hacemos nada
+    return(x)
+  } else if (is.numeric(x)) {
+    # Si es numérico, lo convertimos a factor ordenado
+    return(ordered(x))
+  } else if (is.character(x)) {
+    # Si es una cadena de caracteres, lo convertimos a factor
+    return(as.factor(x))
+  } else {
+    # En otros casos, no hacemos cambios
+    return(x)
+  }
+})
+
+str(df)
+
+```
+
+- Representa en un qplot la edad frente a la tarifa, y en un segundo qplot lo mismo pero con la clave de la clase en la que viajaban. Represéntalo a su vez factorizándolo (i.e. aplicando faceting) por *Sex* y *Embarked*
+```{r}
+# Instalar ggplot2 si no está instalada
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+  install.packages("ggplot2")
+}
+
+# Cargar ggplot2
+library(ggplot2)
+
+# Gráfico de dispersión de edad vs. tarifa
+qplot(data = df, x = Age, y = Fare)
+
+# Gráfico de dispersión de edad vs. tarifa con faceting por Sexo y Embarque y clave de clase
+qplot(data = df, x = Age, y = Fare, facets = . ~ Pclass, color = Pclass) +
+  facet_grid(Sex ~ Embarked)
+
+
+```
+
+- Pinta un boxplot de la edad agrupado según *Sex*
+```{r}
+# Crear un boxplot de la edad agrupado por género
+ggplot(df, aes(x = Sex, y = Age, fill = Sex)) +
+  geom_boxplot() +
+  labs(x = "Sexo", y = "Edad") +
+  ggtitle("Boxplot Edad por Sexo")
+
+
+```
+
+- Pinta un barplot que represente la supervivencia en cada *Pclass* coloreando las barras según esta
+```{r}
+# Crear un barplot de supervivencia por clase (Pclass)
+ggplot(df, aes(x = Pclass, fill = as.factor(Survived))) +
+  geom_bar() +
+  labs(x = "Clase (Pclass)", y = "Recuento pasajeros") +
+  scale_fill_discrete(name = "Supervivencia", labels = c("No", "Sí")) +
+  ggtitle("Barplot Supervivencia por Clase")
+
+```
+
+- Pinta la supervivencia en función de la categoría *Sex*, ¿qué observas?
+```{r}
+# Crear un gráfico de barras apiladas de supervivencia por género
+ggplot(df, aes(x = Sex, fill = factor(Survived))) +
+  geom_bar() +
+  labs(x = "Sexo", y = "Recuento pasajeros") +
+  scale_fill_discrete(name = "Supervivencia", labels = c("No", "Sí")) +
+  ggtitle("Supervivencia por Género")
+
+```
+--- QUE SOBREVIVIERON MAS MUJERES QUE HOMBRES Y MURIRERON MAS HOMBRES QUE MUJERES
+
+
+
+- Pinta la supervivencia en función de la categoría *Pclass*, ¿qué se aprecia?
+```{r}
+# Crear un gráfico de barras apiladas de supervivencia por clase de pasajeros (Pclass)
+ggplot(df, aes(x = factor(Pclass), fill = factor(Survived))) +
+  geom_bar() +
+  labs(x = "Clase de Pasajeros (Pclass)", y = "Recuento") +
+  scale_fill_manual(name = "Supervivencia", values = c("blue", "purple"), labels = c("No", "Sí")) +
+  ggtitle("Supervivencia por Clase de Pasajeros")
+
+```
+--- CLARAMENTE SE APRECIA QUE DEPENDIENDO DE LA CLASE EN LA QUE SE ALOJARA EL PASAJERO, TENIA UNA TASA DIFERENTE DE SUPERVIVENCIA. EN ESTE CASO LOS DE PRIMERA CLASE TUVIERON UNA TASA MAS ALTA DE SUPERVIVENCIA FRENTE A LOS DE SEGUNDA Y TERCERA CLASE, SOBRE TODO LOS DE TERCERA Y QUE ADEMAS ESTOS ERAN LA CLASE CON MAYOR CANTIDAD DE PASAJEROS
+
+
+
+- Crea un histograma de *Age*, ¿qué observas?
+```{r}
+# Crear un histograma de la edad (Age)
+ggplot(df, aes(x = Age)) +
+  geom_histogram(binwidth = 5, fill = "orange", color = "black") +
+  labs(x = "Edad", y = "Frecuencia") +
+  ggtitle("Histograma de Edad")
+
+```
+--- SE PUEDE OBSERVAR QUE EL PICO DE EDAD DEL PASAJE ESTABA ENTRE LOS 20 Y 35 AÑOS, POR LO QUE LA MAYORIA DE PASAJEROS ERAN ADULTOS JOVENES
+
+
+
+- Crea una agrupación de los datos usando `dplyr` de *Sex*  y *Pclass*. Haz sumarios de media, conteo y mediana. ¿Qué podrías decir de los resultados? ¿Hay suficiente muestra para sacar conclusiones en todas las categorías creadas al combinar la edad y la clase?
+```{r}
+# Cargar dplyr si no está cargado
+if (!requireNamespace("dplyr", quietly = TRUE)) {
+  install.packages("dplyr")
+}
+
+# Cargar dplyr
+library(dplyr)
+
+# Crear la agrupación y calcular sumarios
+resultados <- df %>%
+  group_by(Sex, Pclass) %>%
+  summarise(
+    Media_Edad = mean(Age, na.rm = TRUE),
+    Conteo = n(),
+    Mediana_Edad = median(Age, na.rm = TRUE)
+  )
+
+# Ver los resultados
+print(resultados)
+
+```
+
+--- SE OBSERVA QUE HAY MAS HOMBRES QUE MUJERES PARA LAS DIFERENTES CLASES, HACIENDO MENCION QUE HAY UNA GRAN DIFEENCIA Y CANTIDAD PARA LOS HOMBRES DE TERCERA CLASE   
+--- TAMBIEN SE OBSERVA QUE LAS MUJERES SON MAS JOVENES EN GENERAL   
+--- CREO QUE LA MUESTRA ES EQUITATIVA A NIVEL GENERAL ENTRE GENEROS YY CLASES, AUNQUE LOS HOMBRES DE TERCERA CLASE TIENEN UNA MUESTRA MAS GRANDE Y DIFERENCIADA A LOS DEMAS   
+

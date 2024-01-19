@@ -1,0 +1,220 @@
+---
+title: "ACTIVIDAD 4 - UD4 PEDRO LLULL"
+output:
+  pdf_document:
+    latex_engine: xelatex
+  html_notebook: default
+  html_document: default
+---
+
+## Apartado A
+
+¿ Depende el coeficiente intelectual de medidas físicas ?
+Carga "ACTIVIDAD 4 UD4 iqphys.csv" y haz una regresión lineal múltiple:
+
+```{r}
+iqphys <- read.csv("iqphys.csv")
+head(iqphys)
+summary(iqphys)
+```
+
+```{r}
+#No conozco bien la conversión al sistma americano
+iqphys$Height_cm <- round(iqphys$Height * 2.54, 1)  # Convierte la altura a centímetros
+iqphys$Weight_kg <- round(iqphys$Weight * 0.45359237, 1)  # Convierte el peso a kilogramos
+head(iqphys)
+```
+```{r}
+# Modelos de regresión lineal múltiple para sitema internacional y americano
+modelo_iq_i <- lm(PIQ ~ Brain + Height_cm + Weight_kg, data = iqphys)
+modelo_iq_a <- lm(PIQ ~ Brain + Height + Weight, data = iqphys)
+
+# Resumen de los modelos
+summary(modelo_iq_i)
+summary(modelo_iq_a)
+```
+
+- ¿ Cuál de los predictores explica algo la variabilidad del coeficiente intelctual?
+La variable "Brain" es un predictor que explica parte de la variabilidad en el coeficiente intelectual (PIQ). Sin embargo, la altura (ya sea en centímetros o pulgadas) también tiene un efecto, aunque es negativo y relativamente pequeño en comparación con el tamaño del cerebro. El peso (en kilogramos o libras) no parece ser un predictor significativo en este conjunto de datos para explicar la variabilidad del PIQ.
+
+
+- ¿ Cuál es el efecto del tamaño cerebral, después de tomar en cuenta el peso y la altura?
+Para evaluar el efecto del tamaño cerebral después de tener en cuenta el peso y la altura, es importante observar los coeficientes de las variables en el modelo de regresión lineal múltiple. Los coeficientes nos indican la contribución de cada variable al puntaje del cociente de inteligencia (PIQ), teniendo en cuenta las otras variables en el modelo.
+
+Asi pues:
+
+  - Coeficiente de "Brain" (tamaño del cerebro): 2.060 (positivo y significativo)
+  - Coeficiente de "Height" (altura en pulgadas): -2.732 (negativo y significativo)
+  - Coeficiente de "Weight" (peso en libras): 0.0005599 (no significativo)
+
+El tamaño del cerebro tiene un efecto positivo y significativo en el PIQ después de tomar en cuenta la altura y el peso. Esto indica que el tamaño del cerebro sigue siendo relevante para el PIQ incluso después de considerar la altura y el peso.
+
+
+- Da un intervalo de confianza para los coeficientes
+```{r}
+modelo_americano <- lm(PIQ ~ Brain + Height + Weight, data = iqphys)
+
+# Obtiene intervalos de confianza para los coeficientes
+intervalos_americanos <- confint(modelo_americano)
+print(intervalos_americanos)
+
+```
+Brain: El intervalo de confianza para el coeficiente de "Brain" va desde aproximadamente 0.92 hasta 3.21.
+Height (Altura en pulgadas): El intervalo de confianza va desde aproximadamente -5.23 a -0.23 para la variable "Height".
+Weight (Peso en libras): El intervalo de confianza va desde aproximadamente -0.40 a 0.40 para la variable "Weight".
+Si un intervalo no incluye el valor cero, el coeficiente se considera significativo. En este caso, los coeficientes de "Brain" e "Height" son significativos, mientras que el coeficiente de "Weight" incluye cero en su intervalo de confianza, lo que indica que no es significativo en este modelo.
+
+
+- ¿ Cuál es el intervalo de confianza de IQ para los valores de los predictores: tamaño del cerebero = 95, altura = 70, peso = 180 ?
+```{r}
+# Valores de los predictores para calcular el IQ
+tamaño_cerebro <- 95
+altura <- 70
+peso <- 180
+
+# Crea un nuevo dataframe con estos valores
+n_valores <- data.frame(Brain = tamaño_cerebro, Height = altura, Weight = peso)
+
+# Utiliza la función predict para obtener el valor predicho de IQ
+iq_predicho <- predict(modelo_americano, newdata = n_valores, interval = "confidence")
+
+# Muestra el valor predicho de IQ y los límites del intervalo de confianza
+print(iq_predicho)
+
+```
+El intervalo de confianza del (IQ) para los valores de los predictores (tamaño del cerebro = 95, altura = 70, peso = 180) utilizando el modelo americano es el siguiente:
+
+Valor predicho de IQ (fit): 115.9542
+Límite inferior del intervalo de confianza (lwr): 104.5602
+Límite superior del intervalo de confianza (upr): 127.3482
+
+Esto significa que, con un nivel de confianza del 95%, el valor predicho de IQ para un individuo con un tamaño de cerebro de 95, altura de 70 pulgadas y peso de 180 libras está en el rango de aproximadamente 104.56 a 127.35. El valor más probable de IQ es 115.95.
+
+
+- Siguen los residuos una distribución normal? Haz las representaciones del histograma y de de la gráfica cuantil-cuantil convenientes.
+```{r}
+# Residuos del modelo
+residuos <- resid(modelo_americano)
+
+# Histograma de los residuos
+hist(residuos, main = "Histograma de Residuos", xlab = "Residuos", ylab = "Frecuencia")
+
+# Gráfica cuantil-cuantil (Q-Q plot) de los residuos
+qqnorm(residuos, main = "Gráfica QQ de Residuos")
+qqline(residuos)
+
+```
+Los residuos siguen aproximadamente una distribución normal, aunque tiene un sesgo a la derecha, esto sugiere que el modelo está capturando bien la variabilidad en los datos, y las predicciones del modelo son adecuadas.
+
+
+
+
+## Apartado B
+
+- Carga el dataset `prostate.csv`
+```{r}
+prostate <- read.csv("prostate.csv")
+head(prostate)
+summary(prostate)
+
+```
+
+- Elimina la columna train
+```{r}
+prostate2 <- subset(prostate, select = -train)
+head(prostate2)
+```
+
+- ¿Cuál es el mejor modelo que explica la variable lpsa?
+
+```{r}
+#Preparamos el modelo teniendo en cuenta LPSA como dependiente
+
+modl <- lm(lpsa~.,data=prostate2)
+summary(modl)
+confint(modl)
+M <- cor(prostate2)
+M[9,]
+
+```
+Vemos que la distribución de los residuos es "normal" ya que, una mediana cercana a cero y el hecho de que el tercer cuartil sea positivo sugieren que el modelo generalmente predice bien.
+Las independientes LCAVOL LWEIGHT y SVI son buenas candidatas para probar un modelo.
+El R-cuadrado ajustado es de 0.6328, un valor alto. Esto significa que, en nuestro modelo, aproximadamente el 63.28% de la variabilidad en la variable dependiente (lo que estamos tratando de predecir) se explica teniendo en cuenta las variables independientes.
+En la medida de los intervalos de confianza hay que tener en cuente que si un intervalo incluye el valor cero, eso podría indicar que el coeficiente correspondiente no es estadísticamente significativo en la predicción de la variable dependiente. Por otro lado, si el intervalo no incluye el valor cero, el coeficiente se considera estadísticamente significativo.
+
+
+```{r}
+# Sacamos los valores AIC y BIC de los modelos entero y sin las variables que CREO, no aportan.
+AIC(lm(lpsa~.,data=prostate2))
+AIC(lm(lpsa~.-age-lbph-lcp-gleason-pgg45,data=prostate2))
+
+```
+```{r}
+BIC(lm(lpsa~.,data=prostate2))
+BIC(lm(lpsa~.-age-lbph-lcp-gleason-pgg45,data=prostate2))
+```
+```{r}
+# Preparamos para comprobar el modelo paso a paso hacia adelante
+library(MASS)
+step_f <- stepAIC(lm(lpsa~1,data=prostate2), scope = lpsa~lcavol+lweight+age+lbph+svi+lcp+gleason+pgg45, direction = "forward")
+step_f
+
+```
+```{r}
+# Preparamos el modelo para ver las posibilidades paso a paso hacia atrás
+mdl0 <- lm(lpsa~1,data=prostate2)
+mdl1 <- lm(lpsa~lcavol+lweight+age+lbph+svi+lcp+gleason+pgg45,data=prostate2)
+
+stepAIC(mdl1, direction = "backward")
+```
+```{r}
+# Preparamos para comprobar el modelo paso a paso en ambas direcciones
+stepAIC(mdl0, direction = "both", scope=list(upper=mdl1,lower=mdl0))
+```
+Con un -63.72, las 3 pruebas dan al modelo lm(formula = lpsa ~ lcavol + lweight + svi + lbph + age, data = prostate2)
+como el mejor
+
+```{r}
+# Vemos los datos de este modelo que nos ofrece el AIC
+mdl3 <- lm(lpsa~lcavol+lweight+svi+lbph+age,data=prostate2)
+extractAIC(mdl3,scale=0)
+coefficients(mdl3)
+hist(mdl3$residuals)
+qqnorm(mdl3$residuals)
+qqline(mdl3$residuals)
+shapiro.test(mdl3$residuals)
+summary(mdl3)
+```
+Podemos ver que los residuos sesgan un poco hacia la izquierda, aunque la distribución es bastante normal. De las variables predictoras, vemos que LBPH y AGE no parecen tener una significancia para el modelo, aunque el AIC nos diga lo contrario
+
+
+```{r}
+# Vemos los datos de este modelo quitando LBPH y AGE que no añadian "aparentemente" valor al modelo
+mdl3 <- lm(lpsa~lcavol+lweight+svi,data=prostate2)
+extractAIC(mdl3,scale=0)
+coefficients(mdl3)
+hist(mdl3$residuals)
+qqnorm(mdl3$residuals)
+qqline(mdl3$residuals)
+shapiro.test(mdl3$residuals)
+summary(mdl3)
+```
+Parece que aunque el AIC nos diga que el modelo con LBPH y AGE es "mejor", si los quitamos del modelo los resultados son mejores. La distribucuón es mas próxima a una normal que con el modelo anterior, por lo que si tuvieramos que elegir entre el modelo propuesto por AIC o el ajustado según los datos del summary, nos quedaríamos con este último.
+Recordar que el AIC, BIC son técnicas, como otras, que nos ayudan a buscar el mejor modelo, pero es una ayuda, no la confirmación. Es mejor asegurar el modelo en base a esta y otras pruebas para así comparar resultados y métricas.
+
+
+```{r}
+extractAIC(lm(lpsa~lcavol+lweight+svi+lbph+age,data=prostate2),scale=0)
+extractAIC(lm(lpsa~lcavol+lweight+svi,data=prostate2),scale=0)
+```
+Si con los datos del summary anterior, descartamos LBPH y AGE (que aparentemente no añaden valor) y vemos que empeora el AIC, por lo que dejamos el modelo completo de 6 variables como el mejor de entre los dos según AIC.
+
+Observamos pues que el AIC nos arroja que el mejor modelo es el que añade LBHP y AGE pero, si no añadimos estas variables al modelo, el resultado parece establecer un modelo más normalizado, o sea, MEJOR.
+
+
+
+- Da un intervalo de confianza para los coeficientes
+```{r}
+confint(mdl3)
+```
+Vemos con esta información que las 3 primeras variables son estadísticamente significativas mientras que LBPH y AGE no lo son, ya que sus intervalos incluyen el valor 0.

@@ -1,0 +1,27 @@
+21/06
+
+Científico de datos
+
+Matemático, estadístico que está metido en investigación
+
+
+-----ENTENDER LOS DATOS------
+
+El objetivo del módulo es entender los datos y poner sentido en el análisis de datos
+Es importante conocer bien el lenguaje SQL y manejar SQL
+
+
+Inteligencia de negocio BI(busines inteligence)
+
+Procesos, tratamiento de datos y análisis de datos para obtener conocimiento y tomar decisiones
+
+Data lake es un entorno básico, grande y descontrolado para almacenar datos antes de su análisis y transformación
+
+
+
+------BBDD------
+
+Almacena información y se puede consultar
+Los diferentes ficheros de datos (CSV, XML, JSON) son para intercambio de datos entre diferentes sistemas
+
+

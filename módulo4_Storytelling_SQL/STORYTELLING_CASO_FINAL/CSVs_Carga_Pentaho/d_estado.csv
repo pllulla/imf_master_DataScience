@@ -1,0 +1,6 @@
+id_estado;nombre_estado
+1;Cancelado           
+2;Cerrado             
+3;Pendiente           
+4;Asignado            
+5;Resuelto            

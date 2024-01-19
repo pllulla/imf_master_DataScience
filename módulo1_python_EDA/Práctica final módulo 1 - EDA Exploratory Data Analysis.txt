@@ -1,0 +1,110 @@
+Práctica final módulo: Las herramientas del científico de datos
+
+
+Ejercicio 1 – EDA (Exploratory Data Analysis) Python
+
+
+Para este análisis exploratorio (EDA), vamos a trabajar desde un portal de datos abiertos (Open Data), ya que podemos garantizar de esta manera que los datos son reales.
+
+
+En esta ocasión, trabajaremos con datos sobre "Multas de circulación", es decir, infracciones que han cometido los conductores en la ciudad de Madrid. Toda la información del dataset podemos encontrarla en el siguiente enlace:
+
+
+https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=fb9a498a6bdb9410VgnVCM1000000b205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default 
+
+
+Como podemos comprobar, los datos llevan publicándose desde 2014, para nuestro análisis, tomaremos el último año completo disponible, en esta ocasión todo 2022 (Hasta octubre incluido, fecha de consulta 20/02/2023). Dentro del último link podemos ver una descripción detallada de la información que contienen los datos, en nuestro caso tenemos información de todas las multas de circulación que el Ayuntamiento de Madrid tramita cada mes. Por motivos referentes a protección de datos las variables informan únicamente de la infracción y está prohibido realizar labores de re-identificación personal de la información de los infractores.
+
+Vemos que los datos disponibles para descarga y consulta están divididos en:
+
+Año, Mes:
+
+    csv
+    csv
+
+Para nuestro caso de estudio solo vamos a descargar los archivos con extensión .csv que provengan de la categoría "Detalle" del año 2022.
+
+
+Información de las variables
+
+Como hemos visto el dataframe contiene 14 variables que tienen el siguiente significado:
+
+    CALIFICACION: Importancia o gravedad dela infracción cometida.
+    LUGAR: Localización en la que se produjo la infracción.
+    MES + ANIO + HORA: Fecha en la que el conductor fue sancionado.
+    IMP_BOL: Importe de la sanción.
+    DESCUENTO: Reducción sobre el precio dela infracción (50% - Siempre que se pague en el plazo de tiempo establecido en la Ley de Seguridad Vial), si se considera que pueda tener reducción.
+    PUNTOS: Número de puntos que acarrea la sanción sobre el carnet de conducir del infractor.
+    DENUNCIANTE: Agente del organismo público encargado de la regulación de la circulación de la Comunidad de Madrid que impone la denuncia al infractor.
+    HECHO_BOL: Motivo o causa por la que el conductor es sancionado.
+    VEL_LIMITE: Velocidad máxima permitida dela vía por la que el conductor transitaba al realizar la infracción.
+    VEL_CIRCULA: Velocidad a la que el conductor transitaba la vía en la que ha sido sancionado.
+    COORDENADA_X: Punto geográfico (X) que identifica al infractor en infracciones derivadas de rebasar un semáforo en fase roja, no respetar las señales en una vía de circulación restringida o reservadas o acceder a Madrid Central sin autorización.
+    COORDENADA_Y: Punto geográfico (Y) que identifica al infractor en infracciones derivadas de rebasar un semáforo en fase roja, no respetar las señales en una vía de circulación restringida o reservadas o acceder a Madrid Central sin autorización.
+
+
+OBJETIVOS
+
+Teniendo estos datasets y sus variables se pide:
+
+    1-Une todos los dataframe desde Enero a Diciembre en un único dataframe. Muestra el shape total del dataframe resultante.
+	(read.csv y sus opciones es fundamental para juntar los documentos en uno ya que las columnas pueden dar problemas si no son las mismas)
+    2-Como tal, no vamos a trabajar con datos geográficos, borra las columnas COORDENADA_X y COORDENADA_Y.
+    3-Revisa los valores únicos de las variables, hay algunas de ellas que no tienen más de un valor por lo que son constantes, ¿merece la pena tenerlas en el dataframe?
+	4-Parece que las columnas VEL_LIMITE y, VEL_CIRCULA tienen valores vacíos, esto se debe a que, si la infracción no se produjo por rebasar ningún límite de velocidad, este valor aparece vacío, cambia todas las anomalías que detectes por nulo (solo en estas dos columnas). Pista: Investiga cómo emplear con regex una expresión regular como r'^\s*$' en la función replace.
+    5-Las dos columnas VEL_LIMITE y, VEL_CIRCULA pese a ser dos columnas puramente numéricas, se reconocen como tipo "object", revisa la frecuencia de valores, verás que se cuentan como cadenas de texto, por lo tanto:
+		5.1 Cambia los nulos de las dos variables por 0
+		5.2 Cambia el tipo de la variable a numérico
+		5.3 ¿Cuál es la velocidad límite más repetida distinto de cero?
+    6-Genera una nueva columna llamada DIFERENCIA_KMH que sea el resultado de restar a cada valor de la velocidad a la que circulaba el conductor la velocidad límite en la que se produce la infracción, obtén un top 10 de los conductores que rebasaron los límites a mayor velocidad y un top 5 a menor velocidad.
+    7-Obtén un dataframe filtrado por todas las denuncias que hayan acarreado retirada de puntos. Agrupa el dataframe filtrado por el agente público que emite la denuncia, ¿cuál de todos los agentes públicos tiene una mayor media de retirada de puntos?
+    8-De la columna hora elimina la parte decimal, muestra de forma gráfica en qué horas se han producido más multas.
+    9-Muestra de forma gráfica las multas realizadas durante los meses de 2022. Bien es cierto que en la ciudad de Madrid hay mucho menos tráfico durante los meses de verano comprendidos entre mitad de Junio, Julio, Agosto y una pequeña parte de septiembre ¿Se observa esta afirmación en las visualizaciones?.
+    10-Muestra el número de infracciones de forma gráfica (sin frecuencia acumulada), de cada uno de los agentes públicos en función de la calificación de la infracción
+
+
+Condiciones de entrega
+
+En el campus (Blackboard) en la sección indicada para la práctica final, se hará entrega de un archivo comprimido .rar o .zip que presente el siguiente formato APELLIDO1_APELLIDO2_NOMBRE.rar, dentro del archivo comprimido se incluirá el notebook en formato .ipynb además se deberá enviar la versión en html del notebook.
+
+
+No es necesario realizar ninguna memoria u otro documento explicativo sobre los ejercicios, todos los comentarios o argumentaciones sobre las prácticas se realizarán utilizando Markdown en cada notebook.
+
+
+No es necesario incluir los dataset de entrada en el archivo de entrega.
+
+
+Información sobre la práctica
+
+
+Fecha de plazo límite para su entrega:
+
+- 24 Mayo 23:59
+
+
+    Cualquier entrega realizada después de dicha fecha límite se considerará suspensa.
+    En caso de detectarse plagio la práctica estará suspensa
+    La práctica se realiza de forma individual.
+    La calificación y observaciones de la práctica se recibirán como respuesta de la que contenga la práctica.
+    Las correcciones y calificaciones se irán enviando a partir del 25 de Mayo.
+
+
+PD: Recordad que podéis preguntar dudas jmmoreno@profesorescol.imf.com
+
+
+Criterios de evaluación
+
+
+Evaluación por competencias:
+
+    Desarrollo software en lenguaje Python. 30%
+    Habilidades de procesamiento de datos (csv, txt, json, etc.) en Python. 15%
+    Elección, diseño y uso de estructuras de datos en Python. 20%
+    Empleo de librerías de ciencia de datos (Numpy, Pandas). 20%
+    Competencias en visualización de datos. 15%
+
+
+La puntuación total del ejercicio será de 10 puntos. La práctica se considerará aprobada si la puntuación final es superior o igual a 5 puntos.
+
+
+En caso de que algún alumno no supere la puntuación mínima de la práctica final (5 puntos) se recibirán las pautas pertinentes de recuperación desde el profesorado

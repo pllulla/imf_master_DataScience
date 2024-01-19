@@ -1,0 +1,57 @@
+Caso práctico final - Aprendizaje Automático
+
+Trabajamos como científicos de datos para una empresa de retail que, debido al cambio en los hábitos de consumo de los clientes, está potenciando ampliamente el servicio de venta online. La empresa quiere realizar un modelo de aprendizaje automático para clasificar a los clientes en función a la probabilidad de generar ingresos al comprar en la web. El objetivo es realizar una serie de acciones específicas a los clientes que es más probable que hagan compras en la web. 
+
+Para ello, la empresa ha ido recopilando datos en su herramienta de Google Analytics. Cuenta con datos de sesiones, en los que cada una de las sesiones son de un cliente distinto en un período de un año
+
+
+Tareas que nos pide la empresa
+
+    -Realización de un análisis de las variables del dataset de Google Analytics como pueden ser histogramas, boxplots, etc. Cualquier otro análisis es bienvenido, siempre explicándolo y con un sentido de negocio.
+	
+    -Tratamiento de los valores faltantes, outliers, etc en caso que los hubiese. Si hay valores con missings, eliminarlos con el método de pandas llamado dropna()
+	
+    -Tratamiento de categóricas pasándolas a numéricas por medio de dummies, mapeándolas o utilizando un label encoder (o cualquier otro método que considere el alumno). Justificar las operaciones que se realizan.
+	
+    -Si existe alguna variable que se necesite borrar, borradla. Justificarlo.
+	
+    -Estandariza los datos, justificando qué tipo de estandarización se emplea y por qué
+	
+    -Justificar cualquier método de selección de variables que se realice, así como la justificación de cualquier método de contraste de hipótesis se emplea (si se considera necesario)
+	
+    -Dividir los datos en Train (75%) y en Test (25%). Con los datos de Train se pretende ajustar modelos con CrossValidation y GridSearch.
+	
+    -Utilizar un modelo lineal. Entre los modelos lineales están las regresiones logísticas, regresiones lineales, etc.
+	
+    -Utilizar un modelo de redes neuronales.
+	
+    -Utilizar cualquier otro modelo de clasificación.
+	
+    -Si el alumno lo considera, puede incluir más modelos.
+	
+    -Optimizar algún parámetro de cada modelo utilizando CrossValidation y GridSearch, o de la forma que se estime oportuna, siempre justificándolo.
+	
+    -Elegir el mejor modelo de los tres según la métrica ROC en CrossValidation. Predecir Test y obtener una métrica estimada. Realizar la comparativa de todos los modelos implementados por Accuracy, Recall y ROC
+	
+    -Sobre el modelo con el mayor valor en la métrica ROC, muestra la matriz de confusión y, realiza la siguiente suposición.
+		-Por cada TP obtenemos 100 €
+		-Por cada TN obtenemos 100€
+		-Por cada FP perdemos 20 € 
+		-Por cada FN perdemos 500 €
+		¿Cuál es la rentabilidad final del modelo?
+
+
+Información sobre los datos
+
+El conjunto de datos consta de 10 atributos numéricos y 8 categóricos.
+    El atributo "Revenue" puede ser usado como la etiqueta de la clase (target).
+    "Administrative", "Administrative Duration", "Informational", "Informational Duration", "Product Related" y "Product Related Duration" representan el número de diferentes tipos de páginas visitadas por el visitante en esa sesión y el tiempo total dedicado a cada una de estas categorías de páginas. Los valores de estas características se derivan de la información del URL de las páginas visitadas por el usuario y se actualizan en tiempo real cuando el usuario realiza una acción, por ejemplo, pasar de una página a otra. 
+    Las características "Bounce Rate", "Exit Rate" y "Page Value" representan las métricas medidas por Google Analytics para cada página del sitio de comercio electrónico. El valor de la característica "Bounce Rate" de una página web se refiere al porcentaje de visitantes que entran en el sitio desde esa página y luego salen ("rebote") sin activar ninguna otra solicitud al servidor de análisis durante esa sesión. El valor de la característica "Exit Rate" para una página web específica se calcula como para todas las visitas a la página, el porcentaje que fueron las últimas en la sesión. La función "Page Value" representa el valor medio de una página web que un usuario ha visitado antes de completar una transacción de comercio electrónico. 
+    La característica de "Special Day" indica la cercanía de la hora de visita del sitio a un día especial específico (por ejemplo, el Día de la Madre, el Día de San Valentín) en el que es más probable que las sesiones finalicen con una transacción. El valor de este atributo se determina teniendo en cuenta la dinámica del comercio electrónico, como la duración entre la fecha del pedido y la fecha de entrega. Por ejemplo, para el día de San Valentín, este valor toma un valor distinto de cero entre el 2 y el 12 de febrero, cero antes y después de esta fecha, a menos que esté cerca de otro día especial, y su valor máximo de 1 el 8 de febrero. 
+    El conjunto de datos también incluye el sistema operativo, el navegador, la región, el tipo de tráfico, el tipo de visitante como visitante que regresa o como nuevo visitante, un valor booleano que indica si la fecha de la visita es de fin de semana, y el mes del año.
+	
+	
+Consideraciones prácticas.
+    Dado que queremos establecer una comparativa de modelos lo más justa posible, el pre-procesamiento debe ser general para todos los modelos implementados
+    Organizar el código de acuerdo a las buenas prácticas que hemos visto en clase.
+    Escribir todas las consideraciones que sean necesarias en Markdown.

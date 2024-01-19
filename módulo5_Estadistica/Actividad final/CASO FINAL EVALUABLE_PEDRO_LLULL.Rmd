@@ -1,0 +1,448 @@
+---
+title: "Caso Pŕactico Final Evaluable PEDRO LLULL"
+output:
+  html_document: default
+  html_notebook: default
+  pdf_document: default
+---
+
+Tomaremos el dataset Salaries.csv
+
+El conjunto de datos consiste en los salarios de nueve meses recogidos de 397 profesores universitarios en los EE.UU. durante 2008 y 2009. Además de los salarios, también se recogió el rango del profesor, el sexo, la disciplina, los años desde el doctorado y los años de servicio. Así, hay un total de 6 variables, que se describen a continuación.
+
+      1. rank: Categórica - de profesor asistente, profesor asociado o catedrático
+      2. discipline: Categórica - Tipo de departamento en el que trabaja el profesor, ya sea aplicado (B) o teórico (A)
+      3. yrs.since.phd: Continuo - Número de años desde que el profesor obtuvo su doctorado
+      4. yrs.service: Continuo - Número de años que el profesor ha prestado servicio al departamento y/o a la universidad
+      5. sex: Categórico - Sexo del profesor, hombre o mujer
+      6. salary: Continuo - Sueldo de nueve meses del profesor (USD)
+
+El objetivo de esta práctica consiste en realizar un estudio íntegro del dataset para terminar implementando un modelo lineal regularizado que realice predicciones sobre el salario a percibir de un profesor. Asimismo, se pedirá aprovechar la explicabilidad de estos modelos y los estudios estadísticos realizados para arrojar intuiciones y dependencias en los datos.
+
+Para ello, se pide al estudiante que realice los siguientes pasos:
+
+1. Carga los datos. Realiza una inspección por variables de la distribución de salarios en función de cada atributo visualmente. Realiza las observaciones pertinentes. ¿Qué variables son mejores para separar los datos?
+
+```{r}
+profes <- read.csv("Salaries.csv")
+head(profes)
+```
+
+```{r}
+# Voy a eliminar la primera columna que se crea desde el CSV, ya que no aporta nada
+profes <- subset(profes, select = -X)
+
+head(profes)
+tail(profes)
+summary(profes)
+
+```
+
+```{r}
+# Verifico que no haya valores nulos
+colSums(is.na(profes))
+```
+
+```{r}
+# Vamos a ver los datos de forma descriptiva o visual, empezando por los básicos
+library(ggplot2)
+
+# Gráfica de distribución para 'rank'
+ggplot(profes, aes(x = rank, fill = rank)) +
+  geom_bar(color = "black") +
+  labs(title = "Distribución de Rank")
+
+# Gráfica de distribución para 'discipline'
+ggplot(profes, aes(x = discipline, fill = discipline)) +
+  geom_bar(color = "black") +
+  labs(title = "Distribución de Discipline")
+
+# Gráfica de distribución para 'sex'
+ggplot(profes, aes(x = sex, fill = sex)) +
+  geom_bar(color = "black") +
+  labs(title = "Distribución de Sex")
+
+```
+      
+    RANK: La mayoría de los profesores son "Prof", seguido por "AssocProf" y "AsstProf".
+    DISCIPLINE: Hay más profesores en el departamento "B" que en el "A".
+    SEX: Hay significativamente más profesores masculinos que femeninos.
+
+
+
+
+```{r}
+# Ahora Boxplot para ver como se comportan las categóricas y scatterplots para las continuas
+library(ggplot2)
+
+ggplot(profes, aes(x = rank, y = salary, fill = rank)) + 
+  geom_boxplot() +
+  labs(title = "Distribución del Salario por Rango", x = "Rango", y = "Salario")
+
+ggplot(profes, aes(x = discipline, y = salary, fill = discipline)) + 
+  geom_boxplot() +
+  labs(title = "Salario por Disciplina", x = "Disciplina", y = "Salario")
+
+ggplot(profes, aes(x = sex, y = salary, fill = sex)) + 
+  geom_boxplot() +
+  labs(title = "Distribución del Salario por Sexo", x = "Sexo", y = "Salario")
+
+
+# En los Scatter añadí el sexo para ver un poco la diferencia entre H y M
+ggplot(profes, aes(x = yrs.since.phd, y = salary, color=sex)) + 
+  geom_point() +
+  labs(title = "Salario vs. Años desde el Doctorado", x = "Años desde el Doctorado", y = "Salario")
+
+ggplot(profes, aes(x = yrs.service, y = salary, color=sex)) + 
+  geom_point() +
+  labs(title = "Salario vs. Años de Servicio", x = "Años de Servicio", y = "Salario")
+
+```
+1. Distribución de Salario por Rango
+
+    Prof: Los profesores titulares (Prof) tienen un rango más amplio de salarios, con una mediana más alta comparada con los otros rangos. Hay algunos outliers en el extremo superior, indicando que algunos profesores titulares ganan significativamente más que sus colegas.
+    AssocProf: Los profesores asociados tienen un rango de salarios más estrecho y una mediana más baja comparada con los profesores titulares.
+    AsstProf: Los profesores asistentes tienen el rango de salarios más bajo y la mediana más baja. No hay outliers en este grupo.
+
+2. Distribución de Salario por Disciplina
+
+    A: La disciplina A muestra un rango de salarios ligeramente más estrecho que la disciplina B, y su mediana está un poco más baja.
+    B: La disciplina B tiene un rango de salarios más amplio y su mediana es ligeramente más alta.
+
+3. Distribución de Salario por Sexo
+
+    Male: Los hombres tienen un rango más amplio de salarios y una mediana más alta. Tiene muchos outliers en la parte superior.
+    Female: Las mujeres tienen un rango más estrecho de salarios y una mediana más baja.
+
+4. Distribución de Salario vs. Años desde el PhD
+
+    No se observa una tendencia clara que indique que los salarios aumentan con el número de años desde el doctorado. Sin embargo, hay una concentración de salarios más bajos para aquellos con menos años desde el PhD. Los datos se DISPERSAN mucho así como aumentan los años.
+
+5. Distribución de Salario vs. Años de Servicio
+
+    Similar a los años desde el PhD, no hay una tendencia clara que relacione los años de servicio con los salarios. Hay una variabilidad considerable en los salarios, independientemente de los años de servicio. AL igual que el caso anterior, así como pasan los años Aumenta mucho la dispersión de os datos.
+
+¿Qué Variables son Mejores para Separar los Datos?
+
+    Rango: Es una variable clave para separar los datos, ya que muestra diferencias significativas en los salarios entre los diferentes rangos de profesores.
+    Sexo: También es clave, muestra diferencias notables en los salarios entre hombres y mujeres, lo cual podría ser un punto importante.
+    Disciplina: Aunque las diferencias no son tan marcadas como en el rango o el sexo, todavía hay variaciones que podrían ser útiles.
+    Las variables numéricas, "años desde el PhD" y "años de servicio", no muestran una relación clara con el salario.
+
+
+
+
+
+
+2. ¿Podemos emplear un test paramétrico para determinar si las medias de salarios entre hombres y mujeres son las mismas o difieren? Ten en cuenta que, en tanto que se pide usar un test paramétrico, se deberá determinar si las muestras cumplen con las hipótesis necesarias.
+
+    Podemos utilizar un test t de Student para comparar las medias de los salarios entre hombres y mujeres, ya que es un test paramétrico que se utiliza comúnmente para comparar las medias de dos grupos independientes.
+
+    Sin embargo, para aplicar correctamente un test t, necesitamos verificar algunos puntos:
+    Normalidad: Las distribuciones de las muestras deben ser aproximadamente normales. Esto se puede verificar visualmente con un histograma o un gráfico Q-Q, o utilizando pruebas estadísticas como la prueba de Shapiro-Wilk.
+
+```{r}
+# Vamos a ver de primeras como se comportan lod datos de los salarios para H y M en un Q-Q
+salarios_hombres <- profes[profes$sex == 'Male', ]$salary
+salarios_mujeres <- profes[profes$sex == 'Female', ]$salary
+
+qqnorm(salarios_hombres)
+qqline(salarios_hombres)
+
+qqnorm(salarios_mujeres)
+qqline(salarios_mujeres)
+```
+
+Gráfico Q-Q para Salarios de Hombres
+
+    Los puntos siguen bastante bien la línea en la distribución, parece que la parte central de la distribución es bastante normal. Hay algunas desviaciones en los extremos, lo que indica que hay outliers.
+
+Gráfico Q-Q para Salarios de Mujeres
+
+    Al igual que con los hombres, los puntos siguen bastante bien la línea en el centro de la distribución, aunque parece algo más irregular. También hay algunas desviaciones en los extremos.
+
+
+
+```{r}
+# Prueba de Shapiro-Wilk para evaluar la normalidad de las distribuciones de salarios en hombres y mujeres.
+shapiro.test(profes$salary[profes$sex == "Male"])
+shapiro.test(profes$salary[profes$sex == "Female"])
+
+```
+    
+    Hombres: Dado que el valor p es menor que 0.05, rechazamos la hipótesis nula, sugiriendo que los salarios de los hombres no siguen una distribución normal.
+    Mujeres: El valor p es mayor que 0.05, lo que significa que no rechazamos la hipótesis nula, sugiriendo que los salarios de las mujeres podrían provenir de una distribución normal.
+
+    Aunque la muestra de mujeres no rechazó la hipótesis nula de normalidad, la muestra de hombres sí lo hizo. Esto podría deberse al tamaño de la muestra y a la presencia de outliers, como se observó en los gráficos Q-Q.
+
+
+```{r}
+# Este test asume que las muestras provienen de distribuciones normales con varianzas iguales. Hemos visto que la distribución de salarios para los hombres no es normal, por lo que los resultados de este test deben ser tomados con PRECAUCIÓN.
+salarios_hombres <- profes$salary[profes$sex == "Male"]
+salarios_mujeres <- profes$salary[profes$sex == "Female"]
+resultado_t_test <- t.test(salarios_hombres, salarios_mujeres)
+print(resultado_t_test)
+```
+
+    El valor p es menor que 0.05, lo que nos lleva a rechazar la hipótesis nula. Esto sugiere que hay una diferencia estadísticamente significativa entre las medias de los salarios de hombres y mujeres. Pero recordemos que NO se daban las condicione para llevar a cabo este test con garantias por lo que se toman los resultados con precaución.
+
+
+
+
+```{r}
+# La prueba de Mann-Whitney U es una prueba no paramétrica que se utiliza para determinar si hay diferencias significativas entre las distribuciones de dos grupos independientes.
+resultado_mann_whitney <- wilcox.test(salary ~ sex, data = profes)
+print(resultado_mann_whitney)
+
+```
+    
+    El valor p es menor que 0.05, lo que nos lleva a rechazar la hipótesis nula. Esto sugiere que hay una diferencia significativa entre las distribuciones de salarios de hombres y mujeres.
+
+    Al igual que la Prueba T de Student, la prueba de Mann-Whitney U indica que existen diferencias significativas entre los salarios de hombres y mujeres en este conjunto de datos.
+
+    Este resultado refuerza la conclusión de que existe una brecha salarial de género.
+
+    Dado que no teníamos el 100% de condiciones para el test t de Student, los resultados del test de Mann-Whitney U son probablemente más confiables, apoyando la conclusión de que las medianas de los salarios son diferentes entre los dos grupos.
+
+
+
+
+3. Divide el dataset tomando las primeras 317 instancias como train y las últimas 80 como test. Entrena un modelo de regresión lineal con regularización Ridge y Lasso en train seleccionando el que mejor **MSE** tenga. Da las métricas en test. Valora el uso del One Hot Encoder, en caso de emplearlo arguméntalo.
+
+
+    JuanMa nos ha comentado que la segregacion de variables categoricas a Dummyes penaliza horizontalmente los modelos, ya que añade más variables, sobretodo en modelos con muchas variables. Supongo que en un modelo como el que tenemos no hay problema, ya que no hay muchas variables.
+
+    One Hot Encoding permite convertir las variables categóricas en variables dummy. Este método es útil porque los modelos de regresión lineal requieren entrada numérica y este tipo de codificación permite representar información categórica de una manera que los modelos pueden entender.
+
+
+```{r}
+# Uso dummyVars para aplicar One Hot Encoding
+# Este método es difernte al que nos enseñaste, pero para mi deja las columnas más definidas (Lo vi en un ejemplo de StacKOverflow y ChatGPT también me lo recomendó)
+
+#IGUALMENTE, EN EL ARCHIVO DE R "Puebas.Rmd" dejo el ejemplo con las pautas que nos enseñaste. Se puede ver que los resultados son casi iguales.
+
+library(caret)
+
+dummies_model <- dummyVars(" ~ .", data = profes)
+profes_OH <- predict(dummies_model, newdata = profes)
+head(profes_OH)
+
+```
+
+
+
+```{r}
+# Índices para los conjuntos de entrenamiento y prueba
+train_indices <- 1:317
+test_indices <- 318:397
+
+# Dividir los datos en conjuntos de entrenamiento y prueba
+X_train <- profes_OH[train_indices, -ncol(profes_OH)]  # Todas las columnas excepto la última (salary)
+y_train <- profes_OH[train_indices, ncol(profes_OH)]   # Solo la última columna (salary)
+
+X_test <- profes_OH[test_indices, -ncol(profes_OH)]
+y_test <- profes_OH[test_indices, ncol(profes_OH)]
+
+```
+
+```{r}
+library(glmnet)
+
+set.seed(42)
+
+# Ridge
+cv.ridge <- cv.glmnet(X_train, y_train, family='gaussian', alpha=0, type.measure='mse')
+plot(cv.ridge)
+cv.ridge$lambda.min
+min(cv.ridge$cvm)
+
+# Lasso
+cv.lasso <- cv.glmnet(X_train, y_train, family='gaussian', alpha=1, type.measure='mse')
+plot(cv.lasso)
+cv.lasso$lambda.min
+min(cv.lasso$cvm)
+
+```
+
+    El modelo Ridge tiene un MSE ligeramente menor que el modelo Lasso en este caso, lo que indica que podría estar proporcionando un mejor ajuste a los datos.
+
+
+
+```{r}
+coef(cv.ridge, s=cv.ridge$lambda.min)
+```
+```{r}
+coef(cv.lasso, s=cv.lasso$lambda.min)
+```
+
+    El coeficiente para profesor asociado se ha reducido a cero, lo que indica que, después de la penalización Lasso, esta variable no está contribuyendo al modelo
+
+
+```{r}
+library(glmnet)
+# Predecir y calcular el MSE real para Ridge
+predictions_ridge <- predict(cv.ridge$glmnet.fit, s = cv.ridge$lambda.min, newx = X_test)
+mse_ridge <- mean((y_test - predictions_ridge)^2)
+
+# Predecir y calcular el MSE real para Lasso
+predictions_lasso <- predict(cv.lasso$glmnet.fit, s = cv.lasso$lambda.min, newx = X_test)
+mse_lasso <- mean((y_test - predictions_lasso)^2)
+
+mse_ridge
+mse_lasso
+
+```
+
+        El Modelo Ridge tiene un MSE menor en el conjunto de prueba en comparación con el Modelo Lasso. Esto sugiere que el Modelo Ridge ha generalizado mejor a los datos.
+    A pesar de que el Modelo Lasso realizó una selección de características, eliminando algunos coeficientes al reducirlos a cero, esto no se tradujo en un mejor rendimiento en el conjunto de prueba en comparación con el Modelo Ridge.
+
+
+```{r}
+#predict.glmnet(cv.ridge$glmnet.fit, s = cv.ridge$lambda.min, newx=X_test)
+#predict.glmnet(cv.lasso$glmnet.fit, s = cv.lasso$lambda.min, newx=X_test)
+```
+
+
+
+    Aunque no se pide explicitamente, voy a probar con ELASTICNET para ver y comparar los resultados
+
+```{r}
+cv.elasticnet <- cv.glmnet(X_train, y_train, family='gaussian', alpha=0.5, type.measure='mse')
+
+# Predicciones en el conjunto de entrenamiento
+predictions_train <- predict(cv.elasticnet$glmnet.fit, s = cv.elasticnet$lambda.min, newx = X_train)
+mse_train <- mean((y_train - predictions_train)^2)
+
+# Predicciones en el conjunto de prueba
+predictions_test <- predict(cv.elasticnet$glmnet.fit, s = cv.elasticnet$lambda.min, newx = X_test)
+mse_test <- mean((y_test - predictions_test)^2)
+
+mse_train
+mse_test
+
+```
+
+
+
+```{r}
+coef(cv.elasticnet, s=cv.elasticnet$lambda.min)
+```
+
+    Ajustando más del lado de RIDGE ya que nos ha dado mejor resultado en las pruebas individuales de RIDGE y LASSO
+    
+    
+```{r}
+# Ajustar el modelo Elastic Net
+cv.elasticnet <- cv.glmnet(X_train, y_train, family='gaussian', alpha=0.2, type.measure='mse')
+
+# Predicciones en el conjunto de entrenamiento
+predictions_train <- predict(cv.elasticnet$glmnet.fit, s = cv.elasticnet$lambda.min, newx = X_train)
+mse_train <- mean((y_train - predictions_train)^2)
+
+# Predicciones en el conjunto de prueba
+predictions_test <- predict(cv.elasticnet$glmnet.fit, s = cv.elasticnet$lambda.min, newx = X_test)
+mse_test <- mean((y_test - predictions_test)^2)
+
+mse_train
+mse_test
+
+coef(cv.elasticnet, s=cv.elasticnet$lambda.min)
+
+```
+
+Resultados:
+
+    Modelo Elastic Net α=0.2:
+        MSE en Train: 467,471,894
+        MSE en Test: 639,871,403
+
+Comparación con Modelos Anteriores:
+
+    Ridge:
+        MSE en Test: 629,379,301
+    Lasso:
+        MSE en Test: 642,549,192
+    Elastic Net con α=0.5:
+        MSE en Test: 642,456,275
+
+Podemos observar que:
+
+    El modelo Elastic Net con α=0.2 tiene un MSE en el conjunto de prueba que está entre los MSE de los modelos Ridge y Lasso, indicando un rendimiento intermedio.
+
+    Comparado con el modelo Elastic Net con α=0.5, el modelo con α=0.2α=0.2 tiene un MSE en el conjunto de prueba ligeramente menor, indicando un mejor rendimiento.
+    
+    
+
+
+4. Estudia la normalidad de los residuos del modelo resultante, ¿detectas algún sesgo?
+
+```{r}
+# Calcular residuos para Ridge y Lasso
+residuos_ridge <- y_test - predictions_ridge
+residuos_lasso <- y_test - predictions_lasso
+
+# Gráfico de histograma para residuos de Ridge
+hist(residuos_ridge, main="Histograma de Residuos para Ridge", xlab="Residuos", ylab="Frecuencia", col='lightblue', border="black", breaks=50, probability=TRUE)
+lines(density(residuos_ridge), col="blue", lwd=2)
+
+# Gráfico de histograma para residuos de Lasso
+hist(residuos_lasso, main="Histograma de Residuos para Lasso", xlab="Residuos", ylab="Frecuencia", col= 'pink', border="black", breaks=50, probability=TRUE)
+lines(density(residuos_lasso), col="red", lwd=2)
+
+# Gráfico QQ para residuos de Ridge
+qqnorm(residuos_ridge, main="Gráfico QQ para Residuos de Ridge")
+qqline(residuos_ridge)
+
+# Gráfico QQ para residuos de Lasso
+qqnorm(residuos_lasso, main="Gráfico QQ para Residuos de Lasso")
+qqline(residuos_lasso)
+
+# Prueba de Shapiro-Wilk
+shapiro_test_ridge <- shapiro.test(residuos_ridge)
+shapiro_test_lasso <- shapiro.test(residuos_lasso)
+
+# Imprimir los resultados de las pruebas
+shapiro_test_ridge
+shapiro_test_lasso
+
+```
+
+    Los residuos en un modelo de regresión representan la diferencia entre los valores observados y los valores predichos por el modelo. 
+    
+Sesgo en los Residuos
+
+    En un modelo sin sesgo, la distribución de los residuos debería ser simétrica alrededor de cero. Sin embargo, si hay sesgo, podríamos ver que los residuos tienden a ser positivos o negativos, lo que indicaría que el modelo está sobrestimando o subestimando los valores.
+
+    En el caso RIDGE, observamos en el histograma de los residuos se ve que los residuos están bastante centrados entorno al 0, pero tiene datos que aplanan bastante la campana en los extremos y en el gráfico Q-Q que hay colas largas hacia ambos lados, lo que indica la presencia de algunos residuos grandes. Esto sugiere que el modelo podría estar subestimando los salarios en ciertos casos.
+    
+Prueba de Shapiro-Wilk
+
+    La prueba de Shapiro-Wilk es una prueba de normalidad que evalúa si una muestra proviene de una distribución normal. En el contexto de los residuos de un modelo de regresión, esperaríamos que los residuos siguieran una distribución normal si el modelo es adecuado. Un p-valor menor que 0.05, como observamos en nuestro caso (0.01164), sugiere que los residuos no siguen una distribución normal, lo que podría ser indicativo de problemas en el modelo.
+
+    Buesqué que definición podía tener este tipo de campana de normalidad y el Q-Q y creo es parecida a la que se comenta en la figura 11.8/figura C, tanto el Q-Q Plot como la distribución en histograma (Distribución de colas livianas/pesadas)
+    https://fhernanb.github.io/libro_modelos_mixtos/reg-diagnos.html
+
+
+
+
+5. ¿Qué conclusiones extraes de este estudio y del modelo implementado? ¿Consideras correcto el rendimiento del mismo?
+
+Conclusiones del Estudio y del Modelo Implementado
+
+    Distribución de Salarios: A través del análisis exploratorio de datos, observamos que la variable 'rank' parece ser un factor significativo en la determinación de los salarios, con los catedráticos ganando más en promedio que los profesores asociados y asistentes. También la diferencia en los salarios entre hombres y mujeres.
+
+    Influencia de Variables: Las variables 'yrs.since.phd' y 'yrs.service' muestran una tendencia positiva con los salarios, aunque con mucha variabilidad. La disciplina ('A' o 'B') no parece tener un impacto significativo en los salarios.
+
+    Modelo Implementado: El modelo de regresión lineal con regularización Ridge, seleccionado por tener el menor MSE en el conjunto de entrenamiento comparado con Lasso y ElasticNet. El rendimiento del modelo en el conjunto de prueba fue razonable, aunque el MSE es alto, lo que indica que hay espacio para mejorar el modelo.
+
+    Normalidad de los Residuos: Los residuos del modelo muestran algunas desviaciones de la normalidad, lo que podría afectar la interpretación de los resultados del modelo. Sin embargo, no se detectó un sesgo fuerte.
+
+Rendimiento del Modelo
+
+    El modelo Ridge mostró un rendimiento aceptable, pero el MSE en el conjunto de prueba fue  alto, lo que indica que el modelo podría mejorar.
+
+Sobre el Tema de los Salarios
+
+    Existen disparidades salariales basadas en el rango y posiblemente en el género y se puede observar en las diferentes pruebas.
+    La experiencia (años desde el doctorado y años de servicio) parece tener un impacto positivo en los salarios, pero la relación no es tan clara.
+

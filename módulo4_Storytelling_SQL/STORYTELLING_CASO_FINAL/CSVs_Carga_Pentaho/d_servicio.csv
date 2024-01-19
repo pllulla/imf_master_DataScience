@@ -1,0 +1,116 @@
+id_servicio;nombre_servicio
+1;-1                                                
+2;ACTIVE DIRECTORY OSS                              
+3;AEROHIVE                                          
+4;ALARM SYSTEM                                      
+5;ALCHEMY                                           
+6;API CONNECT                                       
+7;API GATEWAY                                       
+8;ARAMIS                                            
+9;ARIS - MAPRO                                      
+10;AURIGA CONNECT                                    
+11;AUTOCOTIZADOR CARRIER MAYORISTA                   
+12;BART                                              
+13;BI_EN                                             
+14;BI_EN_TNA                                         
+15;CHRONOS                                           
+16;CISCO - NSO TAIL-F                                
+17;CISCO PRIME WIFI                                  
+18;CISCO SSM SATELLITE                               
+19;CLOUD4U (VM2U)                                    
+20;COMSEC                                            
+21;CONCILIATION TOOL                                 
+22;CONTROL M                                         
+23;CORPORATE EMAIL                                   
+24;CROSS                                             
+25;CUSTOMER WEB PORTAL                               
+26;DATAWAREHOUSE-POWERCENTER-BO                      
+27;DEVOPS                                            
+28;DHCP GLOBAL LAN/DHCP                              
+29;DNS                                               
+30;DNS GESTION + IPX + STI                           
+31;DNS GRX                                           
+32;DUNA                                              
+33;ESB (JBOSS-FUSE)                                  
+34;FACEBOOK WORKPLACE                                
+35;FAST                                              
+36;FAST (TOMS + MANO)                                
+37;FAST ORDERING (TOMS)                              
+38;FAST RBM                                          
+39;FAST VIRTUAL SERVICES (MANO)                      
+40;FIRMA ELECTRONICA                                 
+41;FORTIPORTAL                                       
+42;GENERAL SERVICES                                  
+43;GLOBAL CTI                                        
+44;GLOBAL PRICING TOOL                               
+45;GLOBAL SAP                                        
+46;HERMES                                            
+47;HORIZON VIEW (VDI)                                
+48;INFINITY                                          
+49;INFINITY - SALESFORCE                             
+50;INFOBLOX                                          
+51;INFRASTRUCTURE CROSS                              
+52;INFRASTRUCTURE CROSS CHANGE                       
+53;INFRASTRUCTURE CROSS SYSTEM                       
+54;IT CMDB                                           
+55;iTELEPHONY                                        
+56;LDAP                                              
+57;LDAP GESTION + XDSL                               
+58;LOGOS                                             
+59;MAQUINA DE SALTO                                  
+60;MEETING CALL                                      
+61;MERAKI                                            
+62;MICROFOCUS UFT                                    
+63;MONITORING SYSTEM                                 
+64;MRR                                               
+65;NETROUNDS                                         
+66;NIFI                                              
+67;NNMI                                              
+68;NSIM                                              
+69;NSN REPORT FTP                                    
+70;OFFICE 365                                        
+71;OMI CLIENTES                                      
+72;OMI PLATAFORMAS                                   
+73;OMI RED                                           
+74;ONEDRIVE                                          
+75;OPERATIONS ORCHESTRATOR                           
+76;OSS PROVISION                                     
+77;PANGEA                                            
+78;PCA                                               
+79;PCPA                                              
+80;PRIME                                             
+81;PROVIDER MANAGEMENT                               
+82;PROXY INVERSO                                     
+83;PROXY WEB ZSCALER                                 
+84;QUALITY TABLEAU                                   
+85;RACKTABLES                                        
+86;RADIUS XDSL + IPSEC + BGAN                        
+87;REMEDY ON DEMAND                                  
+88;ROUTE EXPLORER (REX)                              
+89;SALVAGUARDA CONFIGURACIONES                       
+90;SAP AMERICA                                       
+91;SECOPS                                            
+92;SECURITY INCIDENT                                 
+93;SEDA PORTAL                                       
+94;SERVICIOS DE BACKUP                               
+95;SERVIWEB OSS                                      
+96;SMC TOOLS                                         
+97;SOLARWINDS                                        
+98;SPLUNK                                            
+99;SUGUS                                             
+100;SYSLOG                                            
+101;TABLEAU                                           
+102;TACACS AAA                                        
+103;TEAMS                                             
+104;TECHNOWIKI                                        
+105;TEFGAD-GLOBAL ACTIVE DIRECTORY                    
+106;TELARIX                                           
+107;TELESAP                                           
+108;TRAFUL                                            
+109;TRAFUL-SPLUNK                                     
+110;VITA                                              
+111;vMANAGE                                           
+112;VPN                                               
+113;VPN CONNECT                                       
+114;VSAT/ DESCARGA DE CONFIGURACIONES                 
+115;WORKPLACE                                         

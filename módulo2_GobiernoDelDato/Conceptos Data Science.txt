@@ -1,0 +1,91 @@
+Empresa o negocio y tipo de servicio del OnPremise hasta SaaS
+
+Modelo de análisis y negocio que pueda encajar
+
+---------------------------------------------------------
+
+
+Análisis descriptivo - Qué ha pasado?            Exploramos los datos
+Análisis de diagnostico - Por qué ha pasado?     Exploramos los datos
+Análisis predictivo - Qué va a pasar?            Con un histórico de datos podemos ver de prever
+Análisis restrictivo - Qué hacer para que pase  Tenemos ya unos datos y unos resultados, podemos aplicar 
+												 esos datos y experiencia para tomar decisiones: Coche de google
+												 recomendaciones de compras personales, semáforo, ...
+
+Si tienes un modelo y este modelo te acierta la mitad de las veces, ese modelo es malo. Blanco o negro no es un buen resultado. Se necesitan modelos más efectivos.
+
+Data lake (lago de datos): Diseño y gestión del almacén de datos en el mundo Big Data, de gran cantidad de datos
+Se monta un data lake para procesar una gran cantidad de datos
+
+Para una cantidad de datos pequeña es un Data Warehouse, esta se usa en negocio
+
+Analíticas web: Trazas de información que dejamos al entrar en la web o usar redes sociales
+Mucha información, mucha variedad y creada a gran velocidad ---> concepto de Big Data
+
+-------------------
+
+
+22/05
+
+Ecosistema Big Data
+
+Un API es una puerta a una web por la puerta de atrás para consulta de información de la web, normalmente para no saturar el portal web o frontal abierto al público.
+WebScrapping, recabar información de una web, de forma manual o con técnicas o herramientas. Por ejemplo, guardar la información de todos los pisos de Madrid de IDEALISTA.
+Framework es una capa que puede administrar diferentes programas o soluciones
+Sandbox, lugar de ensayo para trabajar y probar (jugar) con los datos, no es producción, es pruebas
+
+Data lake permite al usuario mas autonomía y trabajar directamente con los datos
+No son incompatibles, se puede meter un data warehouse dentro de un data lake
+El concepto de Data Warehouse y Data Lake es que con los datos que se almacenan son para provecho de estos, investigación, desarrollo, consultas para la empresa, ventas, empleados, etc...
+
+Data warehouse interiorizado de empresa, más pequeño. ETL Se extrae, se transforma y se carga  para ponerla a disposición de los usuarios. Datos estructurados y de contenido tradicional (Nombre, Apellido, ventas, etc.... Menos autonomía de los usuarios. Proceso de más elaboración para tratar los datos. Datos más concretos y limpios que Data Lake
+
+Data lake más grande, Gran cantidad de datos y de todo tipo (como un cajón de calcetines), más tipo de datos y más volumen de datos. Datos no tradicionales como imágenes, twets, video,etc... ELT Se extrae, carga y transforma, los usuarios cogen los datos que necesiten para trabajar en ellos. Datos sin estructurar y se transforma. Más autonomía de los usuarios. Procesamiento en tiempo real o en batch. Investigación y desarrollo. Científico de datos suele trabajar con Data Lake. El científico de datos es exigente a la hora de trabajar con Data Lake por la capacidad de procesamiento y rendimiento del data Lake, la ingesta de datos y su proceso.
+
+FLUJO DE DATOS/DATA PIPELINE
+DATOS > INGESTA > ALMACENAMIENTO > PROCESAMIENTO > GESTIÓN DE DATOS Y FLUJO DE TRABAJO > ACCESO > CONOCIMIENTOS
+								FRAMEWORK HADOOP
+								HARDWARE FÍSICO
+
+INGESTA: Incorporar nuevos datos. Herramientas posibles: SQOOP y FLUME (Buscar dos más)
+ALMACENAMIENTO: Guarda la información de cara a su explotación y sea archivado. Herramientas: HADOOP HDFS (Info estructurada, no estructurada o semiestructurada. Cambien NoSQL
+PROCESAMIENTO: Procesar en batch, online o sreaming. Herramientas: Batch o datos en reposo (Hadoop map reduce), Online o tiempo real (Spark, Hive, Impala), Streaming o retransmitido de imágenes, video, audio (esta almacenado y se consume online) (Spark Streaming, Storm, Flink, Kinesis)
+FLUJOS DE TRABAJO: Planificar y orquestar diferentes procesos que se ejecutan determinadas secuencias o condiciones. Herramientas: Oozie
+ACCESO: Dar acceso a los datos y facilitar su explotación. Herramientas PowerBI, Tableau, Qlik, MicroStrategy. DataLabs: Python, R, Java, Scala. Queryes: Hive, Impala. APPS, Apis, Servicios web.
+
+
+HADOOP : MORE BATCH - Capacidad, maneja bien gran cantidad de información, no para manejar datos de forma rápida
+SPARK: MORE STREAMING - Velocidad, procesa y entrega a gran velocidad la información
+
+Si tienes una cantidad de información enorme mejor HADOOP
+Si tienes datos que entran en tiempo real o entran sin parar mejor Spark
+
+HDFS: Método para almacenar datos de todo tipo, imagenes, audio, ficheros de todo tipo, JSON, XML, etc...
+SQL: Información estructurada explotada con lenguaje SQL, trabaja con datos 
+NoSQL: información no estructurada
+
+
+EJERCICIO:
+	RAPIDEZ y STREAMING CON SPARK
+	REDUNDANCIA y DATOS GRANDES CON HADOOP
+	
+	Una empresa que quiere ofrecer los datos de meteorologista de las estaciones meteorológicas en tiempo real e históricos.
+	En tiempo real sería necesario ofrecer datos al momento, en tiempo real o STREAMING. Este seria un caso con Spark
+	Si se quiere consultar históricos de datos meteorológicos sería para consultar gran cantidad de datos en BATCH. En este 
+		caso seria con HADOOP.
+	
+------------------------
+
+23/05
+
+TRANSFORMACIÓN DIGITAL DE LOS ÚLTIMOS 10 AÑOS: Mejorar procesos, conectividad, toma de decisiones, innovación, etc. de la empresa con la adopción de tecnologías para mejorarlos
+Tecnologías como Big Data, Blockchain, etc...
+
+EMPRESA DATA DRIVEN: Empresa que tiene un buen gobierno del dato y explota los datos que genera de forma eficiente para poder sacar mejoras en los procesos e información para la toma de decisiones.
+
+EMPRESA DATA-DRIVEN
+********Tranformar y usar los datos en conocimiento y el conocimiento en mejora de decisiones******
+
+
+
+

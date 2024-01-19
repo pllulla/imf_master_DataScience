@@ -1,0 +1,238 @@
+Análisis exploratorio de datos EDA
+
+EDA es importante para dar un primer vistazo a los datos, es casi imperativo
+Te dan de primeras unos datos y QUÉ HACEMOS?  Pues un EDA es buena forma de empezar y ver esos datos de primeras
+Desenvolverse en una primera toma de contacto con los datos, ganando sensibilidades e intuiciones
+
+Un EDA se hace con datos ya tratados
+
+
+
+Variables continuas y discretas:
+CONTINUAS: valores con un principio y un final y todas las que hay en medio, por ejemplo peso, se puede pesar de
+3 a 100kg y todos los valores entre estos 33,05   65.1254  ect...
+DISCRETAS: Valores únicos como: colores, sexo, genero, personas, etc...
+
+Tipos de gráficos y su uso con GGPLOT:
+	Scatter plots (nubes de puntos)
+	Dos variables continuas:
+	• Relación.
+	• Distribuciones conjuntas.
+Se ve que cuanto más cara es la cuenta, menos propina se da
+
+	Histogramas
+	Una variable continua (se agrupa) o discreta:
+	• Distribución.
+
+	Variable continua vs variable discreta:
+	• Variable continua en cada categoría
+	• Hace uso de Intervalos de Confianza
+Desviación estándar, si hacemos una media hay que tener en cuenta la desviación estándar que seria tener en cuenta
+los valores que hay fuera de la media.
+En la gráfica se ve que el sábado tiene una desviación estándar mas grande (la barra negra)
+
+
+	Variable continua vs variable discreta:
+	• Análogo a los gráficos de barras, pero con líneas que
+	unen puntos.
+
+
+
+	BOX PLOT
+	Percentil: Es una medida de posición. Una vez ordenada una variable, el percentil p es el valor de dicha variable tal que el p% de
+	Los percentiles se calculan en variables ordenables, ej peso de la gente 
+	las observaciones de dicha variable son menores o iguales que él.
+	• Es una medida robusta frente a valores atípicos, i.e. no se ve demasiado afectada.
+	• El p50 se llama mediana, el p25 se llama primer cuartil (q1) y el p75 se llama tercer cuartil (q3).
+	• En contraposición la media no es robusta frente a valores atípicos.
+	IQR: El rango intercuartílico es la diferencia entre el q3 (p75) y el q1 (p25).
+
+OUTLAYER medición que se sale de lo normal
+
+	Ejercicio
+	Observamos que la variable aleatoria X ha tomado los siguientes valores {0, 0, -5, -3, 5, 10, -4, 6, 23, -7}.
+	Calcula los percentiles p0, p25, p50, p75, p100. Calcula el IQR. Calcula 1.5*IQR.
+	1. Lo primero es ordenar los valores de la variable {-7, -5, -4, -3, 0, 0, 5, 6, 10, 23}.
+	2. El p0 es aquel valor tal que el 0% de los valores observados es menor que él. En este caso p0 = -7.
+	El p25 es aquel valor tal que el 25% de los valores observados es menor que él.
+	En este caso, el valor más cercano para dejar al menos el 25% de los valores es:
+	p25 = -4.
+	p50 = 0,
+	p75 = 6,
+	p100 = 23
+	3. IQR = q3 - q1 = p75 - p25 = 6 - (-4) = 10. 1.5*IQR = 15 + 6 = 21
+	el rango de p25 a p75 es 10 (-4 a 6)    Se multiplica por 1.5*IQR  y nos da 15, a este se le suma el p75 (6) 15 + 6 = 21
+	este sería el bigote superior
+
+
+Técnica del Faceting o factorización:
+
+Buscar una tercera o más variables que puedan ayudar a entender los datos
+	En el caso ejemplo se ve a que distancia frena un coche, pero no queda claro, pero mirando el fabricante o tipo de coche
+	se puede descubrir más información
+	
+
+
+
+3 ejemplos de EDA:
+	N05 una compañía teleco de la que se van empleados
+	
+	
+	AL CLIENTE NO LE INTERESA CON QUE LIBRERÍA O QUE HABÉIS HECHO, QUIEREN IDEAS SOBRE LOS DATOS, PISTAS, CONCLUSIONES
+	
+	MEJOR IDEAS SENCILLAS E IR A IDEAS MAS COMPLEJAS diapo 7
+	
+	TENER EN CUENTA A QUIEN SE EXPLICAN LOS RESULTADOS
+	
+
+str(df) para ver que contienen las variables
+summary  para ver de un vistazo ciertos datos continuos y discretos
+
+
+
+
+3. PROBABILIDAD E INFERENCIA ESTADÍSTICA
+
+Probabilidad:
+• Número entre 0 y 1.
+• Propensión a la ocurrencia de un suceso.
+• Espacio muestral: conjunto de todos los posibles sucesos que pueden darse en un experimento
+
+
+Variables aleatorias:
+• Función que asigna un valor al resultado de un experimento aleatorio.
+• Ejemplo: Sacar la bola de la bolsa. Nos da el valor “bola blanca” o “bola negra”.
+• 2 tipos de variables aleatorias:
+o Variable aleatoria continua - Puede tomar un rango continuo de valores
+▪ Ejemplo: Peso de la población española, salario de los científicos de
+datos
+o Variable aleatoria discreta - Puede tomar un rango discreto de valores
+▪ Ejemplo: Tirar un dado, número de grandes morosos en España
+
+o Variable aleatoria continua - Puede tomar un rango continuo de valores
+o Variable aleatoria discreta - Puede tomar un rango discreto de valores
+
+
+Función de masa
+Valor discreto que otorga peso a un valor (ejemplo dado de seis caras)
+
+
+Funciones de densidad 
+Te permite saber la probabilidad de un intervalo, un intervalo definido anteriormente en un rango de los datos
+este rango se mide de 0 a 1
+
+
+Función de cuantiles
+Dado un valor numérico entre 0 y 1, que indica una probabilidad,
+devuelve el valor del espacio muestral tal que la probabilidad de sacar dicho
+valor o cualquier otro menor que él sea la probabilidad dada.
+• Es la función inversa de cdf (función de distribución acumulada)
+
+¿Por qué se llama función de cuantiles?
+• Si X es una variable aleatoria, devuelve los percentiles.
+• Ejemplo: qf(0.5) = 3 y el percentil 50 es 3.
+
+
+
+
+VARIABLES ALEATORIAS DISCRETAS:
+Las variables aleatorias discretas son un concepto fundamental en estadísticas y probabilidad. Representan eventos o resultados que toman valores discretos, generalmente enteros o números que se pueden contar. A continuación, se describen algunas de las variables aleatorias discretas más comunes:
+
+    Variable Aleatoria de Bernoulli: Esta variable toma dos posibles valores, generalmente etiquetados como 0 y 1. Representa un evento que puede ocurrir (1) o no ocurrir (0) con cierta probabilidad de éxito (p).
+
+    Variable Aleatoria Binomial: Representa el número de éxitos en una secuencia fija de ensayos de Bernoulli independientes, cada uno con la misma probabilidad de éxito (p). Su distribución se llama distribución binomial y está definida para valores discretos no negativos.
+
+    Variable Aleatoria de Poisson: Se utiliza para modelar el número de eventos que ocurren en un intervalo de tiempo o espacio fijo. La distribución de Poisson es apropiada cuando los eventos son raros pero tienen una tasa promedio conocida (λ) de ocurrencia.
+
+    Variable Aleatoria Geométrica: Representa el número de ensayos de Bernoulli independientes necesarios antes de que ocurra el primer éxito. Su distribución es adecuada para modelar el tiempo hasta el primer éxito en un proceso de Bernoulli.
+
+    Variable Aleatoria Hipergeométrica: Utilizada para modelar situaciones en las que se extraen elementos de una población finita sin reemplazo. Representa el número de éxitos en una muestra de tamaño fijo sin reemplazo.
+
+    Variable Aleatoria de Distribución Uniforme Discreta: En este caso, cada valor posible tiene la misma probabilidad de ocurrir. Por ejemplo, al lanzar un dado justo de 6 caras, cada número del 1 al 6 tiene igual probabilidad de salir.
+
+    Variable Aleatoria de Distribución de Poisson Generalizada: Esta es una generalización de la distribución de Poisson y se utiliza para modelar eventos raros pero con tasas de ocurrencia que varían.
+
+    Variable Aleatoria Multinomial: Es una extensión de la variable aleatoria binomial a más de dos categorías. Representa el número de veces que ocurre cada una de varias categorías en un número fijo de ensayos independientes.
+
+    Variable Aleatoria de Distribución Hipergeométrica Negativa: Representa el número de ensayos de Bernoulli independientes necesarios para obtener r éxitos, donde r es un número entero fijo.
+
+    Variable Aleatoria de Distribución de Dirichlet-Multinomial: Se utiliza en estadísticas bayesianas y se relaciona con la variable aleatoria multinomial, pero modela la distribución de varias categorías con una distribución de Dirichlet como distribución previa.
+
+Estas son solo algunas de las variables aleatorias discretas más comunes, y hay muchas otras en estadísticas y probabilidad que se utilizan para modelar una variedad de situaciones en la vida real. Cada una tiene sus propias características y aplicaciones específicas.
+
+
+
+VARIABLES ALEATORIAS CONTINUAS:
+Las variables aleatorias continuas son un concepto fundamental en estadísticas y probabilidad. Representan eventos o resultados que pueden tomar un rango infinito de valores dentro de un intervalo. A continuación, se describen algunas de las variables aleatorias continuas más comunes:
+
+    Variable Aleatoria Normal (Gaussiana): Es una de las distribuciones más importantes en estadísticas. Tiene una forma de campana y está completamente definida por su media (μ) y su desviación estándar (σ). Se utiliza para modelar una amplia variedad de fenómenos en la naturaleza y la sociedad debido a su propiedad de estar presente en muchas poblaciones y medidas.
+
+    Variable Aleatoria Exponencial: Se usa comúnmente para modelar el tiempo entre eventos en un proceso de Poisson, donde los eventos ocurren de manera continua pero aleatoria. La distribución exponencial está definida por su parámetro de tasa (λ) y se caracteriza por su falta de memoria.
+
+    Variable Aleatoria Uniforme Continua: En esta distribución, todos los valores dentro de un intervalo tienen la misma probabilidad de ocurrir. La distribución uniforme continua se utiliza, por ejemplo, para modelar la selección aleatoria entre varios valores igualmente probables.
+
+    Variable Aleatoria Log-Normal: Los logaritmos de esta variable siguen una distribución normal. Se utiliza en situaciones donde las cantidades positivas tienen una dispersión proporcional al valor en sí mismo.
+
+    Variable Aleatoria Gamma: Se utiliza para modelar el tiempo hasta que ocurra un número determinado de eventos en un proceso de Poisson. Tiene dos parámetros: la tasa (λ) y la forma (k).
+
+    Variable Aleatoria Weibull: Es una generalización de la distribución exponencial y se utiliza para modelar el tiempo hasta que ocurra un evento. Tiene dos parámetros: el parámetro de escala (λ) y el parámetro de forma (k).
+
+    Variable Aleatoria Chi-cuadrado: Se utiliza para modelar la distribución de la suma de los cuadrados de k variables aleatorias normales estándar independientes. Es ampliamente utilizada en estadísticas inferenciales, especialmente en pruebas de hipótesis.
+
+    Variable Aleatoria Beta: Tiene soporte en el intervalo [0, 1] y se utiliza comúnmente para modelar proporciones y tasas de éxito en experimentos binomiales.
+
+    Variable Aleatoria Cauchy: Es conocida por su falta de momentos y cola pesada. Se utiliza en estadísticas bayesianas y en algunos modelos matemáticos.
+
+    Variable Aleatoria Pareto: Se utiliza para modelar fenómenos con colas pesadas, como la distribución de riqueza en una población.
+
+Estas son algunas de las variables aleatorias continuas más comunes en estadísticas y probabilidad. Cada una tiene sus propias características y aplicaciones específicas en la modelización de diferentes tipos de datos y fenómenos.
+
+
+
+----------------------------------------------------
+
+
+INFERENCIA PARAMÉTRICA: Puedo hacer hipotesis nula de la muestra poblacional
+						Tiene parámetros de confianza
+La inferencia paramétrica es un enfoque estadístico que implica hacer suposiciones específicas sobre la forma de la distribución subyacente de los datos en una población. En este contexto, "paramétrico" se refiere a la especificación de ciertos parámetros numéricos que caracterizan la distribución. La inferencia paramétrica se utiliza para realizar estimaciones y pruebas de hipótesis sobre estos parámetros.
+
+Aquí hay algunos conceptos clave relacionados con la inferencia paramétrica:
+
+    Distribución Paramétrica: En la inferencia paramétrica, se supone que los datos siguen una distribución de probabilidad paramétrica específica. Por ejemplo, se puede suponer que los datos siguen una distribución normal, una distribución exponencial, una distribución binomial, etc. Cada una de estas distribuciones tiene parámetros que deben estimarse a partir de los datos.
+
+    Parámetros: Los parámetros son valores numéricos que caracterizan una distribución. Por ejemplo, en una distribución normal, los parámetros son la media (μ) y la desviación estándar (σ). En una distribución binomial, los parámetros son el número de ensayos (n) y la probabilidad de éxito (p).
+
+    Estimación de Parámetros: Para realizar inferencia paramétrica, es necesario estimar los parámetros de la distribución a partir de una muestra de datos. Los métodos de estimación, como el método de máxima verosimilitud o los estimadores de momentos, se utilizan para calcular estos valores.
+
+    Pruebas de Hipótesis: La inferencia paramétrica también implica realizar pruebas de hipótesis sobre los parámetros de la distribución. Por ejemplo, se pueden realizar pruebas para determinar si la media de una población es igual a un valor específico.
+
+    Intervalos de Confianza: Los intervalos de confianza se utilizan para estimar un rango plausible de valores para un parámetro con un cierto nivel de confianza. Por ejemplo, se puede calcular un intervalo de confianza del 95% para la media poblacional.
+
+    Modelos Paramétricos: En muchos casos, los datos se ajustan bien a un modelo paramétrico específico, lo que facilita la interpretación y la toma de decisiones basadas en estadísticas.
+
+    Suposiciones Importantes: La inferencia paramétrica depende de suposiciones sobre la forma de la distribución subyacente de los datos. Si estas suposiciones no son válidas, los resultados de la inferencia pueden ser incorrectos.
+
+Ejemplos de técnicas de inferencia paramétrica incluyen pruebas t, análisis de varianza (ANOVA), regresión lineal, pruebas de bondad de ajuste y muchas otras. Estas técnicas se utilizan para tomar decisiones basadas en datos y hacer inferencias sobre poblaciones más grandes en función de muestras de datos observadas.
+
+
+INFERENCIA NO PARAMÉTRICA: No puedo hacer hipótesis nula de la muestra poblacional
+							No tiene parámetros de confianza
+La inferencia no paramétrica es un enfoque estadístico que se utiliza cuando no se hacen suposiciones específicas sobre la forma de la distribución subyacente de los datos en una población. A diferencia de la inferencia paramétrica, que se basa en suposiciones sobre parámetros específicos de distribución, la inferencia no paramétrica es más flexible y se utiliza cuando no se conoce la forma exacta de la distribución o cuando los datos no siguen una distribución paramétrica específica.
+
+Aquí hay algunos conceptos clave relacionados con la inferencia no paramétrica:
+
+    Sin Suposiciones de Distribución: En la inferencia no paramétrica, no se hacen suposiciones sobre la forma de la distribución de los datos. Esto significa que no se asume que los datos sigan una distribución normal, exponencial u otra distribución paramétrica.
+
+    Métodos No Paramétricos: Se utilizan métodos estadísticos que no dependen de parámetros de distribución específicos. Estos métodos incluyen pruebas estadísticas y técnicas de estimación que son menos restrictivas en términos de suposiciones sobre los datos.
+
+    Ranking y Ordenación: Muchos métodos no paramétricos se basan en el ranking u ordenación de los datos en lugar de sus valores numéricos exactos. Esto hace que estos métodos sean robustos frente a desviaciones de la normalidad y valores atípicos.
+
+    Pruebas de Hipótesis No Paramétricas: En lugar de pruebas paramétricas como la prueba t, se utilizan pruebas no paramétricas como la Prueba de Wilcoxon-Mann-Whitney para comparar grupos de datos. Estas pruebas son útiles cuando las suposiciones de normalidad no se cumplen.
+
+    Estimación No Paramétrica: Cuando se necesita estimar parámetros o funciones de densidad, se utilizan métodos de estimación no paramétrica, como el núcleo de densidad.
+
+    Flexibilidad: La inferencia no paramétrica es más flexible y se puede aplicar a una amplia variedad de tipos de datos, incluidos datos categóricos y ordinales, así como datos numéricos.
+
+    Menos Eficiente: Aunque es más flexible, la inferencia no paramétrica a menudo es menos eficiente en términos de precisión que la inferencia paramétrica cuando las suposiciones paramétricas son válidas.
+
+En resumen, la inferencia no paramétrica se utiliza cuando se quiere realizar análisis estadísticos sin hacer suposiciones específicas sobre la distribución de los datos. Esto la hace adecuada para una amplia gama de situaciones en las que las suposiciones paramétricas no son apropiadas o no se pueden verificar.
